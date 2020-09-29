@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Stabilize - Earn Yield for Stability</title>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.js"></script>
+<link rel="stylesheet" href="../css/bootstrap.css" >
+<link rel="stylesheet" href="../css/bootstrap-theme.css">
+<script src="../js/bignumber.js"></script>
+<script src="../js/interface.min.js"></script>
+<link rel="stylesheet" href="../css/ui.css" >
+<link rel="shortcut icon" href="../favicon.png" type="image/png">
+
+</head>
+
+<body style="background-color: rgb(248,249,250);">
+
+<div style="background-color: white; box-shadow: rgba(151, 164, 175, 0.1) 0px 0px 10px 0px">
+	<div class="container marketing">
+		<div class="row featurette" style="background-color: white;">
+			<div class="col-md-4" id="logo_div">
+				<img src="../images/icon.png" class="img-fluid" style="width: auto; max-height: 40px;">
+			</div>
+			<div class="col-md-4" id="menu_div">
+				<div style="display: inline-block; text-align: center; padding-left: 10px; padding-right: 10px;">
+					<a href="../" style="color: rgb(150,150,150);">HOME</a>
+				</div>
+				<div style="display: inline-block; text-align: center; padding-left: 10px; padding-right: 10px; color: black;">
+					APP
+				</div>
+			</div>
+			<div class="col-md-4" id="metamask_div">
+				<div id="metamask_interactive" onclick="metamaskButtonClick();">
+					Install MetaMask
+				</div>	
+			</div>		
+		</div>
+	</div>
+</div>
+<div class="container marketing">
+	<div class="row featurette" id="loading_panel">
+		<div class="col-md-12" style="margin-top: 200px; text-align: center; margin-bottom: 150px;">
+			<span style="color: rgb(40,40,40); font-size: 20px;">Connect to MetaMask to view the pools</span><br><br>
+		</div>
+	</div>
+	<div class="row featurette" id="data_panel" style="display: none; margin-top: 20px;">
+		<div class="col-md-12" id="mid_div" style="margin-top: 10px;">
+			<div style="color: rgb(40,40,40); font-size: 16px; margin-bottom: 30px;">Total Value Locked: <span id="tvl" style="font-weight: bold;">------------------</span></div>
+
+			<span style="color: rgb(40,40,40); font-size: 20px;">Enter a pool to start earning STBZ rewards<br><br></span>
+
+			<div class="info_div">
+				<span style="font-size: 20px;"><strong>STBZ/ETH Uni LP Pool</strong></span><br>
+				<a href="https://uniswap.info/pair/0xDB28312a8d26D59978D9B86cA185707B1A26725b" target="_blank"><button class="small_button_style">Get STBZ/ETH LP</button></a><br>
+				<div class="info_window">
+					<div class="left_item">Daily Yield:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_0_dpy">---</div>
+					<div class="left_item">APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_0_apr">---</div>
+					<div class="left_item">Pool Size:</div>
+					<div class="right_item" id="panel_0_poolsize">---</div>
+					<div class="left_item">My Balance:</div>
+					<div class="right_item" id="panel_0_mybalance">---</div>
+					<div class="left_item">STBZ Earned:</div>
+					<div class="right_item" id="panel_0_rewardbalance">---</div>
+				</div>
+				<div id="panel_0_action_buttons" style="display: none;">
+					<input type="number" step="any" id="panel_0_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="small_button_style" style="border-radius: 0px;" onclick="selectMaxIn(0);">Max In</button> <button class="small_button_style" style="border-radius: 0px;" onclick="selectMaxOut(0);">Max Out</button>
+					<br><button class="small_button_style" style="font-weight: bold;" onclick="deposit(0);">Deposit</button> <button class="small_button_style" style="font-weight: bold; display: none;" onclick="withdraw(0);" id="panel_0_withdraw_button">Withdraw</button> <button class="small_button_style" style="font-weight: bold; display: none;" onclick="claimReward(0);" id="panel_0_claim_button">Claim STBZ</button>
+				</div>
+				<div id="panel_0_unlock_button" style="margin-top: 10px; display: none;">
+					<button class="small_button_style" style="font-weight: bold;" id="panel_0_unlock_inner_button" onclick="unlockToken(0);">Unlock LP</button>
+				</div>
+			</div>
+
+			<div class="info_div">
+				<span style="font-size: 20px;"><strong>DAI Pool</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0x6b175474e89094c44da98b954eedeac495271d0f" target="_blank"><button class="small_button_style">Get DAI</button></a><br>
+				<div class="info_window">
+					<div class="left_item">Daily Yield:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_1_dpy">---</div>
+					<div class="left_item">APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_1_apr">---</div>
+					<div class="left_item">Pool Size:</div>
+					<div class="right_item" id="panel_1_poolsize">---</div>
+					<div class="left_item">My Balance:</div>
+					<div class="right_item" id="panel_1_mybalance">---</div>
+					<div class="left_item">STBZ Earned:</div>
+					<div class="right_item" id="panel_1_rewardbalance">---</div>
+				</div>
+				<div id="panel_1_action_buttons" style="display: none;">
+					<input type="number" step="any" id="panel_1_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="small_button_style" style="border-radius: 0px;" onclick="selectMaxIn(1);">Max In</button> <button class="small_button_style" style="border-radius: 0px;" onclick="selectMaxOut(1);">Max Out</button>
+					<br><button class="small_button_style" style="font-weight: bold;" onclick="deposit(1);">Deposit</button> <button class="small_button_style" style="font-weight: bold; display: none;" onclick="withdraw(1);" id="panel_1_withdraw_button">Withdraw</button> <button class="small_button_style" style="font-weight: bold; display: none;" onclick="claimReward(1);" id="panel_1_claim_button">Claim STBZ</button>
+				</div>
+				<div id="panel_1_unlock_button" style="margin-top: 10px; display: none;">
+					<button class="small_button_style" style="font-weight: bold;" id="panel_1_unlock_inner_button" onclick="unlockToken(1);">Unlock DAI</button>
+				</div>
+			</div>
+
+			<div class="info_div">
+				<span style="font-size: 20px;"><strong>USDC Pool</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48" target="_blank"><button class="small_button_style">Get USDC</button></a><br>
+				<div class="info_window">
+					<div class="left_item">Daily Yield:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_dpy">---</div>
+					<div class="left_item">APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_apr">---</div>
+					<div class="left_item">Pool Size:</div>
+					<div class="right_item" id="panel_2_poolsize">---</div>
+					<div class="left_item">My Balance:</div>
+					<div class="right_item" id="panel_2_mybalance">---</div>
+					<div class="left_item">STBZ Earned:</div>
+					<div class="right_item" id="panel_2_rewardbalance">---</div>
+				</div>
+				<div id="panel_2_action_buttons" style="display: none;">
+					<input type="number" step="any" id="panel_2_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="small_button_style" style="border-radius: 0px;" onclick="selectMaxIn(2);">Max In</button> <button class="small_button_style" style="border-radius: 0px;" onclick="selectMaxOut(2);">Max Out</button>
+					<br><button class="small_button_style" style="font-weight: bold;" onclick="deposit(2);">Deposit</button> <button class="small_button_style" style="font-weight: bold; display: none;" onclick="withdraw(2);" id="panel_2_withdraw_button">Withdraw</button> <button class="small_button_style" style="font-weight: bold; display: none;" onclick="claimReward(2);" id="panel_2_claim_button">Claim STBZ</button>
+				</div>
+				<div id="panel_2_unlock_button" style="margin-top: 10px; display: none;">
+					<button class="small_button_style" style="font-weight: bold;" id="panel_2_unlock_inner_button" onclick="unlockToken(2);">Unlock USDC</button>
+				</div>
+			</div>
+
+			<div class="info_div">
+				<span style="font-size: 20px;"><strong>USDT Pool</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0xdac17f958d2ee523a2206206994597c13d831ec7" target="_blank"><button class="small_button_style">Get USDT</button></a><br>
+				<div class="info_window">
+					<div class="left_item">Daily Yield:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_3_dpy">---</div>
+					<div class="left_item">APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_3_apr">---</div>
+					<div class="left_item">Pool Size:</div>
+					<div class="right_item" id="panel_3_poolsize">---</div>
+					<div class="left_item">My Balance:</div>
+					<div class="right_item" id="panel_3_mybalance">---</div>
+					<div class="left_item">STBZ Earned:</div>
+					<div class="right_item" id="panel_3_rewardbalance">---</div>
+				</div>
+				<div id="panel_3_action_buttons" style="display: none;">
+					<input type="number" step="any" id="panel_3_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="small_button_style" style="border-radius: 0px;" onclick="selectMaxIn(3);">Max In</button> <button class="small_button_style" style="border-radius: 0px;" onclick="selectMaxOut(3);">Max Out</button>
+					<br><button class="small_button_style" style="font-weight: bold;" onclick="deposit(3);">Deposit</button> <button class="small_button_style" style="font-weight: bold; display: none;" onclick="withdraw(3);" id="panel_3_withdraw_button">Withdraw</button> <button class="small_button_style" style="font-weight: bold; display: none;" onclick="claimReward(3);" id="panel_3_claim_button">Claim STBZ</button>
+				</div>
+				<div id="panel_3_unlock_button" style="margin-top: 10px; display: none;">
+					<button class="small_button_style" style="font-weight: bold;" id="panel_3_unlock_inner_button" onclick="unlockToken(3);">Unlock USDT</button>
+				</div>
+			</div>
+
+			<div class="info_div">
+				<span style="font-size: 20px;"><strong>sUSD Pool</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0x57ab1ec28d129707052df4df418d58a2d46d5f51" target="_blank"><button class="small_button_style">Get sUSD</button></a><br>
+				<div class="info_window">
+					<div class="left_item">Daily Yield:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_4_dpy">---</div>
+					<div class="left_item">APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_4_apr">---</div>
+					<div class="left_item">Pool Size:</div>
+					<div class="right_item" id="panel_4_poolsize">---</div>
+					<div class="left_item">My Balance:</div>
+					<div class="right_item" id="panel_4_mybalance">---</div>
+					<div class="left_item">STBZ Earned:</div>
+					<div class="right_item" id="panel_4_rewardbalance">---</div>
+				</div>
+				<div id="panel_4_action_buttons" style="display: none;">
+					<input type="number" step="any" id="panel_4_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="small_button_style" style="border-radius: 0px;" onclick="selectMaxIn(4);">Max In</button> <button class="small_button_style" style="border-radius: 0px;" onclick="selectMaxOut(4);">Max Out</button>
+					<br><button class="small_button_style" style="font-weight: bold;" onclick="deposit(4);">Deposit</button> <button class="small_button_style" style="font-weight: bold; display: none;" onclick="withdraw(4);" id="panel_4_withdraw_button">Withdraw</button> <button class="small_button_style" style="font-weight: bold; display: none;" onclick="claimReward(4);" id="panel_4_claim_button">Claim STBZ</button>
+				</div>
+				<div id="panel_4_unlock_button" style="margin-top: 10px; display: none;">
+					<button class="small_button_style" style="font-weight: bold;" id="panel_4_unlock_inner_button" onclick="unlockToken(4);">Unlock sUSD</button>
+				</div>
+			</div>
+
+		</div>	
+	</div>
+	<div class="row featurette">
+		<div class="col-md-12" id="bottom_div" style="margin-top: 30px; margin-bottom: 30px;">
+			<div style="height: 1px; background-color: rgb(100,100,100); width: 95%; margin-left: auto: margin-right: auto; margin-bottom: 20px;"> </div>
+			<a href="https://t.me/stabilizeprotocol" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../images/telegram.png" class="img-fluid" style="width: 40px; height: auto;"></a>
+			<a href="https://github.com/stabilize-token/" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../images/github.png" class="img-fluid" style="width: 40px; height: auto;"></a>
+			<a href="https://twitter.com/StabilizeP" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../images/twitter.png" class="img-fluid" style="width: 40px; height: auto;"></a>
+		</div>	
+	</div>
+
+
+</div>
+
+</body>
+
+</html>
