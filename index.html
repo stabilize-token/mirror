@@ -8,6 +8,13 @@
 
 <title>Stabilize - Earn Yield for Stability</title>
 
+<style>
+@font-face {
+  font-family: SourceCode;
+  src: url("images/default_font.ttf");
+}
+</style>
+
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <link rel="stylesheet" href="css/bootstrap.css" >
@@ -23,10 +30,10 @@
 
 <div class="container marketing">
 	<div class="row featurette">
-		<div class="col-md-4" id="logo_div">
+		<div class="col-md-3" id="logo_div">
 			<img src="images/icon.png" class="img-fluid" style="width: auto; max-height: 40px;">
 		</div>
-		<div class="col-md-4" id="menu_div">
+		<div class="col-md-6" id="menu_div">
 			<div style="display: inline-block; text-align: center; padding-left: 10px; padding-right: 10px; color: black;">
 				HOME
 			</div>
@@ -34,33 +41,55 @@
 				<a href="app/" style="color: rgb(150,150,150);">APP</a>
 			</div>
 			<div style="display: inline-block; text-align: center; padding-left: 10px; padding-right: 10px;">
-				<a href="https://vfat.tools/stabilize/" target="_blank" style="color: rgb(150,150,150);">CALCULATOR</a>
+				<a href="https://snapshot.page/#/stabilize" target="_blank" style="color: rgb(150,150,150);">GOV</a>
+			</div>
+			<div style="display: inline-block; text-align: center; padding-left: 10px; padding-right: 10px;">
+				<a href="https://medium.com/@stabilize/the-stabilize-protocol-is-an-upcoming-protocol-that-rewards-depositors-of-stablecoins-with-the-3b4c34eee9f2?source=friends_link&sk=fbe352cdeb57ed410ca7b23fc38a6b8c" target="_blank" style="color: rgb(150,150,150);">LEARN</a>
+			</div>
+			<div style="display: inline-block; text-align: center; padding-left: 10px; padding-right: 10px;">
+				<a href="https://vfat.tools/stabilize/" target="_blank" style="color: rgb(150,150,150);">CALC</a>
 			</div>
 		</div>
-		<div class="col-md-4" id="metamask_div">
+		<div class="col-md-3" id="metamask_div">
 			<div id="metamask_interactive" onclick="metamaskButtonClick();">
 				Install MetaMask
 			</div>	
 		</div>		
 	</div>
 	<div class="row featurette">
-		<div class="col-md-8 col-md-offset-2" id="mid_div">
+		<div class="col-md-8 col-md-offset-2" id="mid_div" style="margin-bottom: 80px;">
 			<img src="images/logo.png" class="img-fluid" style="max-width: 300px; height: auto;">
 			<br><br>
-			<span style="color: rgb(40,40,40); font-size: 20px;">Earn STBZ for keeping stablecoins on their pegs</span> 
+			<span style="color: rgb(40,40,40); font-size: 16px;">Earn STBZ for keeping stablecoins on their pegs</span> 
 			<br><br><br>
-			<a href="https://medium.com/@stabilize/the-stabilize-protocol-is-an-upcoming-protocol-that-rewards-depositors-of-stablecoins-with-the-3b4c34eee9f2?source=friends_link&sk=fbe352cdeb57ed410ca7b23fc38a6b8c" target="_blank"><button class="button_style">Learn More</button></a>
-			<a href="app/"><button class="button_style">Get Started</button></a><br>
-			<a href="https://medium.com/@stabilize/the-stabilize-protocol-is-a-protocol-that-rewards-depositors-of-stablecoins-with-the-stbz-reward-7114fd2a50ec?source=friends_link&sk=903205abcb53d419864d6f85123165e3" target="_blank"><button class="button_style">View Roadmap</button></a>
-		</div>	
+			<a href="app/"><button class="dark_button">GO TO APP</button></a>
+			<a href="https://medium.com/@stabilize/the-stabilize-protocol-is-a-protocol-that-rewards-depositors-of-stablecoins-with-the-stbz-reward-7114fd2a50ec?source=friends_link&sk=903205abcb53d419864d6f85123165e3" target="_blank"><button class="light_button">VIEW ROADMAP</button></a>
+		</div>
+		<div class="col-md-12" id="price_div" style="text-align: center; vertical-align: middle; visibility: hidden;">
+			<div class="price_panel">
+				<img src="images/dai_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
+				DAI: <span id="price_panel_1">---</span>
+			</div>
+			<div class="price_panel">
+				<img src="images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
+				USDC: <span id="price_panel_2">---</span>
+			</div>
+			<div class="price_panel">
+				<img src="images/usdt_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
+				USDT: <span id="price_panel_3">---</span>
+			</div>
+			<div class="price_panel">
+				<img src="images/susd_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
+				sUSD: <span id="price_panel_4">---</span>
+			</div>
+		</div>
 	</div>
 	<div class="row featurette">
-		<div class="col-md-8 col-md-offset-2" id="bottom_div" style="margin-bottom: 30px; margin-top: 30px;">
-			<div style="height: 1px; background-color: rgb(100,100,100); width: 95%; margin-left: auto: margin-right: auto; margin-bottom: 20px;"> </div>
+		<div class="col-md-12" id="bottom_div" style="margin-bottom: 30px; margin-top: 20px;">
+			<div style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto: margin-right: auto; margin-bottom: 20px;"> </div>
 			<a href="https://t.me/stabilizeprotocol" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="images/telegram.png" class="img-fluid" style="width: 40px; height: auto;"></a>
 			<a href="https://github.com/stabilize-token/" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="images/github.png" class="img-fluid" style="width: 40px; height: auto;"></a>
 			<a href="https://twitter.com/StabilizePro" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="images/twitter.png" class="img-fluid" style="width: 40px; height: auto;"></a>
-			<a href="https://snapshot.page/#/stabilize" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="images/snapshot.png" class="img-fluid" style="width: 40px; height: auto;"></a>
 		</div>	
 	</div>
 

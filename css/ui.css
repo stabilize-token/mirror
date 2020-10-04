@@ -2,7 +2,7 @@ body{
 	background-color: white;
 	color: rgb(50,50,50);
 	font-size: 16px;
-	font-family: "SF Pro Text","Arial";
+	font-family: SourceCode,"Arial";
 }
 
 #logo_div{
@@ -14,14 +14,13 @@ body{
 
 #menu_div{
 	text-align: center;
-	font-size: 18px;
-	font-weight: bold;
+	font-size: 16px;
 	padding: 17px;
 }
 
 #metamask_div{
 	text-align: right;
-	font-size: 18px;
+	font-size: 16px;
 	padding: 15px;
 }
 
@@ -38,22 +37,43 @@ body{
 	color: rgb(100,100,100);
 }
 
+.price_panel{
+	display: inline-block;
+	font-size: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
 .info_div{
-	border: 2px solid rgb(200,200,200);
+	border: 2px solid black;
 	background-image: linear-gradient(rgb(250,250,250), rgb(255,255,255), rgb(250,250,250), rgb(250,250,250));
 	text-align: center;
 	padding: 10px;
-	border-radius: 10px;
 	display: inline-block;
 	width: 350px;
 	margin: 10px;
 	font-size: 16px;
 	vertical-align: top;
+	min-height: 430px;
+}
+
+.info_window{
+	border: 2px solid rgb(100,100,100); 
+	background-color: white; 
+	padding: 10px;
+	font-size: 12px;
+	margin-top: 10px;
+}
+
+.unlock_div{
+	margin-top: 10px; 
+	display: none; 
+	padding-top: 50px;
 }
 
 .left_item{
 	display: inline-block;
-	width: 49%;
+	width: 48%;
 	text-align: left;
 	font-weight: bold;
 	vertical-align: top;
@@ -61,19 +81,10 @@ body{
 
 .right_item{
 	display: inline-block;
-	width: 49%;
+	width: 48%;
 	text-align: right;
 	font-weight: bold;
 	vertical-align: top;
-}
-
-.info_window{
-	border: 2px solid rgb(200,200,200); 
-	border-radius: 2px; 
-	background-color: white; 
-	padding: 10px;
-	font-size: 12px;
-	margin-top: 10px;
 }
 
 .input_box{
@@ -85,6 +96,47 @@ body{
 	background: none; 
 	border-radius: 2px;
 	border: 1px solid rgb(200,200,200);
+}
+
+.light_button{
+	color: rgb(40,40,40);
+	background-color: white;
+	border: 2px solid black;
+	cursor: pointer;
+	min-width: 160px;
+	padding: 10px;
+	font-size: 14px;
+	margin: 10px;
+}
+
+.light_button:hover{
+	background-color: rgb(245,245,245);
+}
+
+.dark_button{
+	color: white;
+	background-color: rgb(40,20,20);
+	border: 2px solid black;
+	cursor: pointer;
+	min-width: 160px;
+	padding: 10px;
+	font-size: 14px;
+	margin: 10px;
+}
+
+.dark_button:hover{
+	background-color: rgb(50,30,30);
+}
+
+#tvl_div{
+	color: rgb(40,40,40); 
+	font-size: 14px; 
+	margin-bottom: 30px; 
+	border: 2px solid black; 
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
 }
 
 .button_style{
@@ -139,7 +191,7 @@ body{
 
 #metamask_interactive{
 	display: inline-block;
-	border: 1px solid black; 
+	border: 2px solid black; 
 	padding: 2px; 
 	padding-left: 20px;
 	padding-right: 20px;
@@ -159,10 +211,6 @@ body{
 	#metamask_div{
 		text-align: center;
 	}
-	#metamask_interactive{
-		padding-left: 2px;
-		padding-right: 2px;
-	}
 	.left_item{
 		width: 100%;
 		text-align: center;
@@ -172,5 +220,8 @@ body{
 		width: 100%;
 		text-align: center;
 		margin-bottom: 10px;
+	}
+	.unlock_div{
+		padding-top: 0px;
 	}
 }
