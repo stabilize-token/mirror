@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Stabilize - Earn Yield for Stability</title>
+
+<style>
+@font-face {
+  font-family: SourceCode;
+  src: url("../../images/default_font.ttf");
+}
+</style>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.js"></script>
+<link rel="stylesheet" href="../../css/bootstrap.css" >
+<link rel="stylesheet" href="../../css/bootstrap-theme.css">
+<script src="../../js/bignumber.js"></script>
+<script src="../../js/wrap_interface.min.js"></script>
+<link rel="stylesheet" href="../../css/ui.css" >
+<link rel="shortcut icon" href="../../favicon.png" type="image/png">
+
+</head>
+
+<body style="background-color: rgb(248,249,250);">
+
+<div style="background-color: white; box-shadow: rgba(151, 164, 175, 0.1) 0px 0px 10px 0px">
+	<div class="container marketing">
+		<div class="row featurette" style="background-color: white;">
+			<div class="col-md-3" id="logo_div">
+				<img src="../../images/icon.png" class="img-fluid" style="width: auto; max-height: 40px;">
+			</div>
+			<div class="col-md-6" id="menu_div">
+				<div class="menu_item">
+					<a href="../../" style="color: rgb(150,150,150);">HOME</a>
+				</div>
+				<div class="menu_item">
+					<a href="../" style="color: rgb(150,150,150);">POOLS</a>
+				</div>
+				<div class="menu_item">
+					<span style="color: black;">WRAP</span>
+				</div>
+				<div class="menu_item">
+					<a href="https://snapshot.page/#/stabilize" target="_blank" style="color: rgb(150,150,150);">GOV</a>
+				</div>
+				<div class="menu_item">
+					<a href="https://medium.com/@stabilize/the-stabilize-protocol-is-an-upcoming-protocol-that-rewards-depositors-of-stablecoins-with-the-3b4c34eee9f2?source=friends_link&sk=fbe352cdeb57ed410ca7b23fc38a6b8c" target="_blank" style="color: rgb(150,150,150);">LEARN</a>
+				</div>
+				<div class="menu_item">
+					<a href="https://vfat.tools/stabilize/" target="_blank" style="color: rgb(150,150,150);">CALC</a>
+				</div>
+			</div>
+			<div class="col-md-3" id="metamask_div">
+				<div id="metamask_interactive" onclick="metamaskButtonClick();">
+					Install MetaMask
+				</div>	
+			</div>		
+		</div>
+	</div>
+</div>
+<div class="container marketing">
+	<div class="row featurette" id="loading_panel">
+		<div class="col-md-12" style="margin-top: 200px; text-align: center; margin-bottom: 150px;">
+			<span style="color: rgb(40,40,40); font-size: 20px;">Connect to MetaMask to view the wraps</span><br><br>
+		</div>
+	</div>
+	<div class="row featurette" id="data_panel" style="display: none; margin-top: 20px;">
+		<div class="col-md-12" id="mid_div" style="margin-top: 10px;">
+
+			<span style="color: rgb(40,40,40); font-size: 16px;">WRAP YOUR STABLECOINS INTO INTEREST EARNING za-TOKENS<br><br></span>
+
+			<div id="explainer_div">
+				za-TOKENS INCREASE IN VALUE AS INTEREST ACCRUES ON THE UNDERLYING ASSET
+			</div>
+
+			<div class="info_div" style="min-height: 390px;">
+				<img src="../../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>USDC WRAPPER</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48" target="_blank"><button class="light_button">GET USDC &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP USDC INTO za-USDC</span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_0_apr">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_0_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_0_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_0_value">---</div>
+				</div>
+				<div id="panel_0_action_buttons" style="display: none;">
+					<input type="number" step="any" id="panel_0_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(0);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(0);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(0);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(0);" id="panel_0_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_0_unlock_button" class="unlock_div" style="padding-top: 35px;">
+					<button class="dark_button" id="panel_0_unlock_inner_button" onclick="unlockWrapper(0);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+			</div>
+
+			<br><br><br>
+			<span style="font-size: 12px; color: black;">Withdrawal fees apply to unwrap za-Tokens. They start at <strong>1%</strong> and become <strong>0.1%</strong> after 7 days. Each deposit resets the time.<br>All withdrawal fees go to the Stabilize Community Treasury.</span>
+
+		</div>	
+	</div>
+	<div class="row featurette">
+		<div class="col-md-12" id="bottom_div" style="margin-top: 0px; margin-bottom: 30px;"><br>
+			<div style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-bottom: 20px;"> </div>
+			<a href="https://t.me/stabilizeprotocol" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../../images/telegram.png" class="img-fluid" style="width: 40px; height: auto;"></a>
+			<a href="https://github.com/stabilize-token/" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../../images/github.png" class="img-fluid" style="width: 40px; height: auto;"></a>
+			<a href="https://twitter.com/StabilizePro" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../../images/twitter.png" class="img-fluid" style="width: 40px; height: auto;"></a>
+		</div>	
+	</div>
+
+
+</div>
+
+</body>
+
+</html>

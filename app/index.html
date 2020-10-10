@@ -35,19 +35,22 @@
 				<img src="../images/icon.png" class="img-fluid" style="width: auto; max-height: 40px;">
 			</div>
 			<div class="col-md-6" id="menu_div">
-				<div style="display: inline-block; text-align: center; padding-left: 10px; padding-right: 10px;">
+				<div class="menu_item">
 					<a href="../" style="color: rgb(150,150,150);">HOME</a>
 				</div>
-				<div style="display: inline-block; text-align: center; padding-left: 10px; padding-right: 10px; color: black;">
-					APP
+				<div class="menu_item">
+					<span style="color: black;">POOLS</a>
 				</div>
-				<div style="display: inline-block; text-align: center; padding-left: 10px; padding-right: 10px;">
+				<div class="menu_item">
+					<a href="wrap/" style="color: rgb(150,150,150);">WRAP</a>
+				</div>
+				<div class="menu_item">
 					<a href="https://snapshot.page/#/stabilize" target="_blank" style="color: rgb(150,150,150);">GOV</a>
 				</div>
-				<div style="display: inline-block; text-align: center; padding-left: 10px; padding-right: 10px;">
+				<div class="menu_item">
 					<a href="https://medium.com/@stabilize/the-stabilize-protocol-is-an-upcoming-protocol-that-rewards-depositors-of-stablecoins-with-the-3b4c34eee9f2?source=friends_link&sk=fbe352cdeb57ed410ca7b23fc38a6b8c" target="_blank" style="color: rgb(150,150,150);">LEARN</a>
 				</div>
-				<div style="display: inline-block; text-align: center; padding-left: 10px; padding-right: 10px;">
+				<div class="menu_item">
 					<a href="https://vfat.tools/stabilize/" target="_blank" style="color: rgb(150,150,150);">CALC</a>
 				</div>
 			</div>
@@ -68,11 +71,11 @@
 	<div class="row featurette" id="data_panel" style="display: none; margin-top: 20px;">
 		<div class="col-md-12" id="mid_div" style="margin-top: 10px;">
 
-			<div id="tvl_div" style="display: inline-block;">
+			<div id="tvl_div">
 				TOTAL VALUE LOCKED:<br><span id="tvl" style="font-weight: bold; font-size: 18px;">------------------</span>
 			</div>
 
-			<div id="circ_div" style="display: inline-block;">
+			<div id="circ_div">
 				CIRCULATING STBZ SUPPLY:<br><span id="circ_supply" style="font-weight: bold; font-size: 18px;">------------------</span>
 			</div>
 			<br>
@@ -214,11 +217,67 @@
 				</div>
 			</div>
 
+			<div class="info_div">
+				<img src="../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>za-USDC POOL</strong></span><br>
+				<a href="wrap/"><button class="light_button">GET za-USDC &gt;</button></a><br>
+				<div class="info_window">
+					<div class="left_item">DAILY ROI:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_dpy">---</div>
+					<div class="left_item">APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_apr">---</div>
+					<div class="left_item">POOL SIZE:</div>
+					<div class="right_item" id="panel_5_poolsize">---</div>
+					<div class="left_item">BALANCE:</div>
+					<div class="right_item" id="panel_5_mybalance">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_5_value">---</div>
+					<div class="left_item">STBZ EARNED:</div>
+					<div class="right_item" id="panel_5_rewardbalance">---</div>
+				</div>
+				<div id="panel_5_action_buttons" style="display: none;">
+					<input type="number" step="any" id="panel_5_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(5);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxOut(5);">MAX OUT</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(5);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(5);" id="panel_5_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(5);" id="panel_5_claim_button">CLAIM STBZ &gt;</button>
+				</div>
+				<div id="panel_5_unlock_button" class="unlock_div">
+					<button class="dark_button" id="panel_5_unlock_inner_button">NOT YET ACTIVE</button>
+				</div>
+			</div>
+
+			<div style="width: 60%; margin-left: auto; margin-right: auto; margin-bottom: 5px; margin-top: 5px; font-size: 30px;">&middot; &middot; &middot; &middot; &middot;</div>
+
+			<div class="info_div" style="min-height: 400px; ">
+				<img src="../images/stbz_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>TREASURY FURNACE</strong></span><br>
+				<span style="font-size: 14px;">BURN STBZ INTO THE TREASURY TO CLAIM YOUR PERCENT OF CIRCULATING SUPPLY</span>
+				<div class="info_window" style="min-height: 126px;">
+					<div id="treasury_placeholder" style="text-align: center; font-weight: bold; padding-top: 50px; padding-bottom: 50px;">
+						TREASURY EMPTY
+					</div>
+					<div id="treasury_view" style="display: none;">
+						<div style="text-align: center; font-weight: bold;"><big>TREASURY BALANCE</big></div>
+						<div id="treasury_contents">
+						</div>						
+					</div>
+				</div>
+				<div id="treasury_action_buttons" style="display: none;">
+					<input type="number" step="any" id="treasury_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxTreasury();">MAX IN</button>
+					<br><button class="dark_button" style="min-width: 200px; margin: 2px;" onclick="claimTreasury();">BURN AND CLAIM &gt;</button>
+				</div>
+				<div id="treasury_unlock_button" class="unlock_div" style="padding-top: 40px;">
+					<button class="dark_button" id="treasury_unlock_inner_button" onclick="unlockTreasury();">UNLOCK TREASURY TO CLAIM &gt;</button>
+				</div>
+			</div>
+
 		</div>	
 	</div>
 	<div class="row featurette">
 		<div class="col-md-12" id="bottom_div" style="margin-top: 30px; margin-bottom: 30px;">
-			<div style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto: margin-right: auto; margin-bottom: 20px;"> </div>
+			<div style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-bottom: 20px;"> </div>
 			<a href="https://t.me/stabilizeprotocol" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../images/telegram.png" class="img-fluid" style="width: 40px; height: auto;"></a>
 			<a href="https://github.com/stabilize-token/" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../images/github.png" class="img-fluid" style="width: 40px; height: auto;"></a>
 			<a href="https://twitter.com/StabilizePro" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../images/twitter.png" class="img-fluid" style="width: 40px; height: auto;"></a>

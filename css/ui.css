@@ -37,6 +37,13 @@ body{
 	color: rgb(100,100,100);
 }
 
+.menu_item{
+	display: inline-block; 
+	text-align: center; 
+	padding-left: 10px; 
+	padding-right: 10px;
+}
+
 .price_panel{
 	display: inline-block;
 	font-size: 20px;
@@ -54,7 +61,7 @@ body{
 	margin: 10px;
 	font-size: 16px;
 	vertical-align: top;
-	min-height: 430px;
+	min-height: 450px;
 }
 
 .info_window{
@@ -152,6 +159,17 @@ body{
 	padding: 10px;
 }
 
+#explainer_div{
+	max-width: 800px;
+	color: rgb(40,40,40); 
+	font-size: 14px; 
+	margin-bottom: 30px; 
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid black; 
+	padding: 10px;	
+}
+
 .button_style{
 	color: rgb(50,50,50); 
 	padding: 15px; 
@@ -193,7 +211,7 @@ body{
 }
 
 .social_link{
-	opacity: 0.75;
+	opacity: 0.5;
 	transition: opacity 0.5s ease;
 	vertical-align: middle;
 }
@@ -236,5 +254,12 @@ body{
 	}
 	.unlock_div{
 		padding-top: 0px;
+	}
+	.menu_item{
+		display: inline-block; 
+		text-align: center; 
+		padding-left: 20px; 
+		padding-right: 20px;
+		padding-bottom: 10px;
 	}
 }
