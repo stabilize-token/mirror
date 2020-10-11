@@ -78,6 +78,11 @@ body{
 	padding-top: 50px;
 }
 
+.unlock_wrap_div{
+	padding-top: 35px;
+	display: none;
+}
+
 .left_item{
 	display: inline-block;
 	width: 48%;
@@ -233,10 +238,6 @@ body{
 
 #metamask_interactive:hover{
 	text-decoration: underline;
-}
-
-.unlock_wrap_div{
-	padding-top: 35px;
 }
 
 @media screen and (max-width: 991px) {
