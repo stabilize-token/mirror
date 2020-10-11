@@ -12,6 +12,11 @@ body{
 	padding: 10px;
 }
 
+#logo_img{
+	max-width: 415px;
+	height: auto;
+}
+
 #menu_div{
 	text-align: center;
 	font-size: 16px;
@@ -269,5 +274,8 @@ body{
 	}
 	.unlock_wrap_div{
 		padding-top: 0px;
+	}
+	#logo_img{
+		max-width: 300px;
 	}
 }
