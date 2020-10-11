@@ -257,7 +257,7 @@
 						TREASURY EMPTY
 					</div>
 					<div id="treasury_view" style="display: none;">
-						<div style="text-align: center; font-weight: bold;"><big>TREASURY BALANCE</big></div>
+						<div style="text-align: center; font-weight: bold;" id="treasury_title"><big>TREASURY BALANCE</big></div>
 						<div id="treasury_contents">
 						</div>						
 					</div>
@@ -268,7 +268,7 @@
 					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxTreasury();">MAX IN</button>
 					<br><button class="dark_button" style="min-width: 200px; margin: 2px;" onclick="claimTreasury();">BURN AND CLAIM &gt;</button>
 				</div>
-				<div id="treasury_unlock_button" class="unlock_div" style="padding-top: 40px;">
+				<div id="treasury_unlock_button" class="unlock_wrap_div" style="padding-top: 40px;">
 					<button class="dark_button" id="treasury_unlock_inner_button" onclick="unlockTreasury();">UNLOCK TREASURY TO CLAIM &gt;</button>
 				</div>
 			</div>
