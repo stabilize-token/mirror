@@ -101,7 +101,7 @@
 				<div id="panel_0_action_buttons" style="display: none;">
 					<input type="number" step="any" id="panel_0_amount" class="input_box" value="0" placeholder="Enter Amount">
 					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(0);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxOut(0);">MAX OUT</button>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(0);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(0);">MAX OUT</button>
 					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(0);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(0);" id="panel_0_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(0);" id="panel_0_claim_button">CLAIM STBZ &gt;</button>
 				</div>
 				<div id="panel_0_unlock_button" class="unlock_div">
@@ -128,7 +128,7 @@
 				<div id="panel_1_action_buttons" style="display: none;">
 					<input type="number" step="any" id="panel_1_amount" class="input_box" value="0" placeholder="Enter Amount">
 					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(1);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxOut(1);">MAX OUT</button>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(1);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(1);">MAX OUT</button>
 					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(1);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(1);" id="panel_1_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(1);" id="panel_1_claim_button">CLAIM STBZ &gt;</button>
 				</div>
 				<div id="panel_1_unlock_button" class="unlock_div">
@@ -138,28 +138,30 @@
 
 			<div class="info_div">
 				<img src="../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>USDC POOL</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48" target="_blank"><button class="light_button">GET USDC &gt;</button></a><br>
+				<span style="font-size: 16px; vertical-align: top;"><strong>za-USDC POOL</strong></span><br>
+				<a href="wrap/"><button class="light_button">GET za-USDC &gt;</button></a><br>
 				<div class="info_window">
 					<div class="left_item">DAILY ROI:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_dpy">---</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_dpy">---</div>
 					<div class="left_item">APR:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_apr">---</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_apr">---</div>
 					<div class="left_item">POOL SIZE:</div>
-					<div class="right_item" id="panel_2_poolsize">---</div>
+					<div class="right_item" id="panel_5_poolsize">---</div>
 					<div class="left_item">BALANCE:</div>
-					<div class="right_item" id="panel_2_mybalance">---</div>
+					<div class="right_item" id="panel_5_mybalance">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_5_value">---</div>
 					<div class="left_item">STBZ EARNED:</div>
-					<div class="right_item" id="panel_2_rewardbalance">---</div>
+					<div class="right_item" id="panel_5_rewardbalance">---</div>
 				</div>
-				<div id="panel_2_action_buttons" style="display: none;">
-					<input type="number" step="any" id="panel_2_amount" class="input_box" value="0" placeholder="Enter Amount">
+				<div id="panel_5_action_buttons" style="display: none;">
+					<input type="number" step="any" id="panel_5_amount" class="input_box" value="0" placeholder="Enter Amount">
 					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(2);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxOut(2);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(2);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(2);" id="panel_2_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(2);" id="panel_2_claim_button">CLAIM STBZ &gt;</button>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(5);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(5);">MAX OUT</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(5);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(5);" id="panel_5_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(5);" id="panel_5_claim_button">CLAIM STBZ &gt;</button>
 				</div>
-				<div id="panel_2_unlock_button" class="unlock_div">
-					<button class="dark_button" id="panel_2_unlock_inner_button" onclick="unlockToken(2);">UNLOCK USDC TO ENTER &gt;</button>
+				<div id="panel_5_unlock_button" class="unlock_div">
+					<button class="dark_button" id="panel_5_unlock_inner_button" onclick="unlockToken(5);">UNLOCK za-USDC TO ENTER &gt;</button>
 				</div>
 			</div>
 
@@ -182,7 +184,7 @@
 				<div id="panel_3_action_buttons" style="display: none;">
 					<input type="number" step="any" id="panel_3_amount" class="input_box" value="0" placeholder="Enter Amount">
 					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(3);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxOut(3);">MAX OUT</button>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(3);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(3);">MAX OUT</button>
 					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(3);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(3);" id="panel_3_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(3);" id="panel_3_claim_button">CLAIM STBZ &gt;</button>
 				</div>
 				<div id="panel_3_unlock_button" class="unlock_div">
@@ -209,40 +211,11 @@
 				<div id="panel_4_action_buttons" style="display: none;">
 					<input type="number" step="any" id="panel_4_amount" class="input_box" value="0" placeholder="Enter Amount">
 					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(4);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxOut(4);">MAX OUT</button>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(4);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(4);">MAX OUT</button>
 					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(4);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(4);" id="panel_4_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(4);" id="panel_4_claim_button">CLAIM STBZ &gt;</button>
 				</div>
 				<div id="panel_4_unlock_button" class="unlock_div">
 					<button class="dark_button" id="panel_4_unlock_inner_button" onclick="unlockToken(4);">UNLOCK sUSD TO ENTER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div">
-				<img src="../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>za-USDC POOL</strong></span><br>
-				<a href="wrap/"><button class="light_button">GET za-USDC &gt;</button></a><br>
-				<div class="info_window">
-					<div class="left_item">DAILY ROI:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_dpy">---</div>
-					<div class="left_item">APR:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_apr">---</div>
-					<div class="left_item">POOL SIZE:</div>
-					<div class="right_item" id="panel_5_poolsize">---</div>
-					<div class="left_item">BALANCE:</div>
-					<div class="right_item" id="panel_5_mybalance">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_5_value">---</div>
-					<div class="left_item">STBZ EARNED:</div>
-					<div class="right_item" id="panel_5_rewardbalance">---</div>
-				</div>
-				<div id="panel_5_action_buttons" style="display: none;">
-					<input type="number" step="any" id="panel_5_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(5);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxOut(5);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(5);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(5);" id="panel_5_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(5);" id="panel_5_claim_button">CLAIM STBZ &gt;</button>
-				</div>
-				<div id="panel_5_unlock_button" class="unlock_div">
-					<button class="dark_button" id="panel_5_unlock_inner_button" onclick="unlockToken(5);">UNLOCK za-USDC TO ENTER &gt;</button>
 				</div>
 			</div>
 
@@ -270,6 +243,35 @@
 				</div>
 				<div id="treasury_unlock_button" class="unlock_wrap_div" style="padding-top: 40px;">
 					<button class="dark_button" id="treasury_unlock_inner_button" onclick="unlockTreasury();">UNLOCK TREASURY TO CLAIM &gt;</button>
+				</div>
+			</div>
+
+			<div style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-bottom: 20px; margin-top: 20px;"> </div>
+			<span style="color: rgb(40,40,40); font-size: 14px;">INACTIVE POOLS<br><br></span>
+
+			<div class="info_div">
+				<img src="../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>USDC POOL (INACTIVE)</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48" target="_blank"><button class="light_button">GET USDC &gt;</button></a><br>
+				<div class="info_window">
+					<div class="left_item">DAILY ROI:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_dpy">---</div>
+					<div class="left_item">APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_apr">---</div>
+					<div class="left_item">POOL SIZE:</div>
+					<div class="right_item" id="panel_2_poolsize">---</div>
+					<div class="left_item">BALANCE:</div>
+					<div class="right_item" id="panel_2_mybalance">---</div>
+					<div class="left_item">STBZ EARNED:</div>
+					<div class="right_item" id="panel_2_rewardbalance">---</div>
+				</div>
+				<div id="panel_2_action_buttons" style="display: none;">
+					<input type="number" step="any" id="panel_2_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(2);">MAX OUT</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(2);" id="panel_2_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(2);" id="panel_2_claim_button">CLAIM STBZ &gt;</button>
+				</div>
+				<div id="panel_2_unlock_button" class="unlock_div">
+					<button class="dark_button" id="panel_2_unlock_inner_button" onclick="unlockToken(2);">UNLOCK USDC TO EXIT &gt;</button>
 				</div>
 			</div>
 
