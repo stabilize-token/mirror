@@ -66,7 +66,7 @@ body{
 	margin: 10px;
 	font-size: 16px;
 	vertical-align: top;
-	min-height: 450px;
+	min-height: 470px;
 }
 
 .info_window{
@@ -78,7 +78,7 @@ body{
 }
 
 .unlock_div{
-	margin-top: 10px; 
+	margin-top: 20px; 
 	display: none; 
 	padding-top: 50px;
 }
@@ -145,7 +145,7 @@ body{
 	background-color: rgb(50,30,30);
 }
 
-#tvl_div{
+.general_info_div{
 	display: inline-block;
 	color: rgb(40,40,40); 
 	font-size: 14px; 
@@ -154,19 +154,7 @@ body{
 	margin-right: 20px;
 	border: 2px solid black; 
 	min-width: 300px;
-	padding: 10px;
-}
-
-#circ_div{
-	display: inline-block;
-	color: rgb(40,40,40); 
-	font-size: 14px; 
-	margin-bottom: 30px; 
-	margin-left: 20px;
-	margin-right: 20px;
-	border: 2px solid black; 
-	min-width: 300px;
-	padding: 10px;
+	padding: 10px;	
 }
 
 #explainer_div{
@@ -230,6 +218,45 @@ body{
 	opacity: 1;
 }
 
+.withdraw_request_box{
+	color: rgb(40,40,40);
+	background-color: white;
+	border: 2px solid black;
+	cursor: pointer;
+	max-width: 400px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 14px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+.withdraw_request_inner_left{
+	text-align: center;
+	display: inline-block; 
+	width: 75px; 
+	margin: 0px;
+	padding: 15px;
+	font-size: 30px;
+	border-right: 2px solid black;
+	vertical-align: top;
+}
+
+.withdraw_request_inner_right{
+	display: inline-block;
+	text-align: left;
+	font-size: 14px;
+	padding-top: 2px;
+	padding-left: 8px;
+	padding-bottom: 0px;
+	vertical-align: top;
+}
+
+.withdraw_request_box:hover{
+	background-color: rgb(225,225,225);
+}
+
 #metamask_interactive{
 	display: inline-block;
 	border: 2px solid black; 
@@ -243,6 +270,10 @@ body{
 
 #metamask_interactive:hover{
 	text-decoration: underline;
+}
+
+#request_column {
+	border-left: 2px solid rgb(200,200,200);
 }
 
 @media screen and (max-width: 991px) {
@@ -277,5 +308,8 @@ body{
 	}
 	#logo_img{
 		max-width: 300px;
+	}
+	#request_column {
+		border-left: none;
 	}
 }
