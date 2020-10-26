@@ -174,7 +174,7 @@
 					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(8);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(8);" id="panel_8_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(8);" id="panel_8_claim_button">CLAIM STBZ &gt;</button>
 				</div>
 				<div id="panel_8_unlock_button" class="unlock_div">
-					<button class="dark_button" id="panel_8_unlock_inner_button" >NOT YET ACTIVE</button>
+					<button class="dark_button" id="panel_8_unlock_inner_button" onclick="unlockToken(8);">UNLOCK za-DAI TO ENTER &gt;</button>
 				</div>
 			</div>
 
@@ -303,34 +303,6 @@
 
 			<div style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-bottom: 20px; margin-top: 20px;"> </div>
 			<span style="color: rgb(40,40,40); font-size: 14px;">INACTIVE POOLS<br><br></span>
-
-			<div class="info_div">
-				<img src="../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>USDC POOL (INACTIVE)</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48" target="_blank"><button class="light_button">GET USDC &gt;</button></a><br>
-				<div class="info_window">
-					<div class="left_item">DAILY ROI:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_dpy">---</div>
-					<div class="left_item">APR:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_apr">---</div>
-					<div class="left_item">APY*:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_apy">---</div>
-					<div class="left_item">POOL SIZE:</div>
-					<div class="right_item" id="panel_2_poolsize">---</div>
-					<div class="left_item">BALANCE:</div>
-					<div class="right_item" id="panel_2_mybalance">---</div>
-					<div class="left_item">STBZ EARNED:</div>
-					<div class="right_item" id="panel_2_rewardbalance">---</div>
-				</div>
-				<div id="panel_2_action_buttons" style="display: none;">
-					<input type="number" step="any" id="panel_2_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(2);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(2);" id="panel_2_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(2);" id="panel_2_claim_button">CLAIM STBZ &gt;</button>
-				</div>
-				<div id="panel_2_unlock_button" class="unlock_div">
-					<button class="dark_button" id="panel_2_unlock_inner_button" onclick="unlockToken(2);">UNLOCK USDC TO EXIT &gt;</button>
-				</div>
-			</div>
 
 			<div class="info_div">
 				<img src="../images/usdt_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
