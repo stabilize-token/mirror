@@ -86,24 +86,38 @@
 						<option value="dai" selected>DAI ACCOUNT</option>
 						<option value="usdc">USDC ACCOUNT</option>
 						<option value="usdt">USDT ACCOUNT</option>
+						<option value="yusd">yUSD ACCOUNT</option>
+						<option value="link">LINK ACCOUNT</option>
+						<option value="wbtc">wBTC ACCOUNT</option>
+						<option value="renbtc">renBTC ACCOUNT</option>
+						<option value="crvbtc">CRV RenWBTC ACCOUNT</option>
 					</select><br>
 					<div class="info_window">
-						<div class="left_item">TOTAL DEPOSITS:<br><span style="color: rgb(150,150,150);">BOTH POOLS</span></div>
+						<div class="left_item">TOTAL DEPOSITS:<br><span style="color: rgb(150,150,150);" id="total_pools_header">ALL POOLS</span></div>
 						<div class="right_item" id="deposit_total">---</div>
-						<div class="left_item"># SINCE WITHDRAW:<br><span style="color: rgb(150,150,150);">100 POOL</span></div>
-						<div class="right_item" id="deposit_num_100">---</div>
-						<div class="left_item"># SINCE WITHDRAW:<br><span style="color: rgb(150,150,150);">1000 POOL</span></div>
-						<div class="right_item" id="deposit_num_1000">---</div>
-						<div class="left_item">LAST DEPOSIT TIME:<br><span style="color: rgb(150,150,150);">100 POOL</span></div>
-						<div class="right_item" id="deposit_time_100">---</div>
-						<div class="left_item">LAST DEPOSIT TIME:<br><span style="color: rgb(150,150,150);">1000 POOL</span></div>
-						<div class="right_item" id="deposit_time_1000">---</div>
+						<div class="left_item"># SINCE WITHDRAW:<br><span style="color: rgb(150,150,150);" id="pool_1_num_header">POOL 1</span></div>
+						<div class="right_item" id="deposit_num_pool_1">---</div>
+						<div class="left_item"># SINCE WITHDRAW:<br><span style="color: rgb(150,150,150);" id="pool_2_num_header">POOL 2</span></div>
+						<div class="right_item" id="deposit_num_pool_2">---</div>
+						<div id="pool_3_num_div" style="display: none;">
+							<div class="left_item"># SINCE WITHDRAW:<br><span style="color: rgb(150,150,150);" id="pool_3_num_header">POOL 3</span></div>
+							<div class="right_item" id="deposit_num_pool_3">---</div>
+						</div>
+						<div class="left_item">LAST DEPOSIT TIME:<br><span style="color: rgb(150,150,150);" id="pool_1_last_header">POOL 1</span></div>
+						<div class="right_item" id="deposit_time_pool_1">---</div>
+						<div class="left_item">LAST DEPOSIT TIME:<br><span style="color: rgb(150,150,150);" id="pool_2_last_header">POOL 2</span></div>
+						<div class="right_item" id="deposit_time_pool_2">---</div>
+						<div id="pool_3_last_div" style="display: none;">
+							<div class="left_item">LAST DEPOSIT TIME:<br><span style="color: rgb(150,150,150);" id="pool_3_last_header">POOL 3</span></div>
+							<div class="right_item" id="deposit_time_pool_3">---</div>
+						</div>
 					</div>
 					<div id="deposit_action_buttons" style="display: none; margin-top: 20px;">
 						<div id="deposit_options">
 							<strong>DEPOSIT OPTIONS</strong><br>
-							<span style="margin-left: 20px; margin-right: 20px;"><input type="radio" id="deposit_100" name="deposit_number" value="100" checked> 100 <span id="100_unit">DAI</span></span>
-							<span style="margin-left: 20px; margin-right: 20px;"><input type="radio" id="deposit_1000" name="deposit_number" value="1000"> 1000 <span id="1000_unit">DAI</span></span>
+							<span style="margin-left: 20px; margin-right: 20px;" id="deposit_1_div"><input type="radio" id="deposit_1_input" name="deposit_number" value="1" checked> <span id="deposit_1_unit">1 DAI</span></span>
+							<span style="margin-left: 20px; margin-right: 20px;" id="deposit_2_div"><input type="radio" id="deposit_2_input" name="deposit_number" value="2"> <span id="deposit_2_unit">2 DAI</span></span>
+							<span style="margin-left: 20px; margin-right: 20px; display: none;" id="deposit_3_div"><input type="radio" id="deposit_3_input" name="deposit_number" value="3"> <span id="deposit_3_unit">3 DAI</span></span>
 						</div>
 						<div id="note_field" style="display: none;">
 							<strong>DEPOSIT NOTE</strong><br>
@@ -141,7 +155,8 @@
 							<span style="font-size: 12px;">ENTER ANY ETHEREUM REQUESTED (OPTIONAL):</span><br>
 							<input type="text" id="withdraw_eth" class="input_box" value="0" placeholder="Enter ETH Amount" autocomplete="off"><br>
 							<span style="font-size: 12px;">ENTER ADDITIONAL <span id="tip_coin">STABLECOIN</span> TIP (OPTIONAL):</span><br>
-							<input type="text" id="withdraw_tip" class="input_box" value="0" placeholder="Enter Stablecoin Amount" autocomplete="off">							
+							<input type="text" id="withdraw_tip" class="input_box" value="0" placeholder="Enter Token Amount" autocomplete="off">
+							<input type="hidden" id="token_price" value="0">
 						</div>
 						<button class="dark_button" style="min-width: 220px; margin: 10px;" onclick="postProof();" id="withdraw_button">REQUEST WITHDRAW &gt;</button>
 						<span style="font-size: 12px; color: black; display: none;" id="withdraw_code"><br><br></span>
@@ -149,7 +164,7 @@
 				</div>
 
 				<br><br>
-				<span style="font-size: 12px; color: black;">Withdrawal fees apply and vary based on how close stablecoin is to peg. They are <strong>1%</strong> when coin price is below $0.98, <strong>0.1%</strong> when above $1.02 and pro-rated in between. There is also an additional 10 stablecoin fee to pay for gas. Fees are rounded up to nearest whole number.</span>
+				<span style="font-size: 12px; color: black;">Withdrawal fees apply:<br>For stablecoins: <strong>1%</strong> when coin price is below $0.98, <strong>0.1%</strong> when above $1.02 and pro-rated in between. There is also an additional 10 stablecoin fee to pay for gas. Fees are rounded up to nearest whole number.<br><br>For non-stablecoins (including yUSD): <strong>1%</strong> plus $10 USD equivalent gas subsidy. <br><br></span>
 
 			</div>
 
