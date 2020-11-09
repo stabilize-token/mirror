@@ -74,9 +74,9 @@
 	<div class="row featurette" id="data_panel" style="display: none; margin-top: 20px;">
 		<div class="col-md-12" id="mid_div" style="margin-top: 10px;">
 
-			<span style="color: rgb(40,40,40); font-size: 16px;">WRAP YOUR STABLECOINS INTO INTEREST EARNING za-TOKENS<br><br></span>
+			<span style="color: rgb(40,40,40); font-size: 16px;">WRAP YOUR TOKENS INTO INTEREST EARNING z-TOKENS<br><br></span>
 
-			<div id="explainer_div">
+			<div class="explainer_div">
 				za-TOKENS INCREASE IN VALUE AS INTEREST ACCRUES ON THE UNDERLYING ASSET
 			</div>
 
@@ -88,7 +88,7 @@
 				<br>
 				<div class="info_window">
 					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_0_apr">---</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_0_apy">---</div>
 					<div class="left_item">WALLET BALANCE:</div>
 					<div class="right_item" id="panel_0_walletbalance">---</div>
 					<div class="left_item">PRICE/TOKEN:</div>
@@ -115,7 +115,7 @@
 				<br>
 				<div class="info_window">
 					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_1_apr">---</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_1_apy">---</div>
 					<div class="left_item">WALLET BALANCE:</div>
 					<div class="right_item" id="panel_1_walletbalance">---</div>
 					<div class="left_item">PRICE/TOKEN:</div>
@@ -142,7 +142,7 @@
 				<br>
 				<div class="info_window">
 					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_apr">---</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_apy">---</div>
 					<div class="left_item">WALLET BALANCE:</div>
 					<div class="right_item" id="panel_2_walletbalance">---</div>
 					<div class="left_item">PRICE/TOKEN:</div>
@@ -169,7 +169,7 @@
 				<br>
 				<div class="info_window">
 					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_3_apr">---</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_3_apy">---</div>
 					<div class="left_item">WALLET BALANCE:</div>
 					<div class="right_item" id="panel_3_walletbalance">---</div>
 					<div class="left_item">PRICE/TOKEN:</div>
@@ -190,6 +190,42 @@
 
 			<br><br><br>
 			<span style="font-size: 12px; color: black;">Withdrawal fees apply to unwrap za-Tokens. They start at <strong>1%</strong> and decrease every second to <strong>0.1%</strong> after 7 days. Each deposit resets the time.<br>All withdrawal fees go to the Stabilize Community Treasury.</span>
+
+			<div style="width: 60%; margin-left: auto; margin-right: auto; margin-bottom: 5px; margin-top: 20px; font-size: 30px;">&middot; &middot; &middot; &middot; &middot;</div>
+
+			<div class="explainer_div">
+				zs-TOKENS INCREASE IN VALUE AS STRATEGIES BUY MORE OF THE UNDERLYING ASSET.<br>THEY USE EXPERIMENTAL STRATEGIES. DO NOT INVEST MORE THAN YOU ARE WILLING TO LOSE.
+			</div>
+
+			<div class="info_div" style="min-height: 390px;">
+				<img src="../../images/usdt_eth_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>USDT/ETH UNI LP WRAPPER</strong></span><br>
+				<a href="https://uniswap.exchange/add/ETH/0xdac17f958d2ee523a2206206994597c13d831ec7" target="_blank"><button class="light_button">GET USDT/ETH LP &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP USDT/ETH LP INTO zs-ETHUSDT TO EARN INTEREST, PICKLE &amp; ETH</span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_4_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_4_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_4_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_4_value">---</div>
+				</div>
+				<div id="panel_4_action_buttons" style="display: none;">
+					<input type="text" id="panel_4_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(4);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(4);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(4);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(4);" id="panel_4_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_4_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_4_unlock_inner_button" onclick="unlockWrapper(4);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+			</div>
+
+			<br><br>
+			<span style="font-size: 12px; color: black;">There are no withdrawal fees to unwrap zs-Tokens. Some strategies give accessory tokens based on deposit time. Each deposit resets that time.</span>
 
 		</div>	
 	</div>
