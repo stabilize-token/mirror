@@ -77,6 +77,202 @@
 			<span style="color: rgb(40,40,40); font-size: 16px;">WRAP YOUR TOKENS INTO INTEREST EARNING z-TOKENS<br><br></span>
 
 			<div class="explainer_div">
+				zpa-TOKENS INCREASE IN VALUE AS INTEREST ACCRUES ON THE UNDERLYING ASSET
+			</div>
+
+			<div class="info_div" style="min-height: 390px;">
+				<img src="../../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>USDC WRAPPER</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48" target="_blank"><button class="light_button">GET USDC &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP USDC INTO zpa-USDC</span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_7_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_7_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_7_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_7_value">---</div>
+					<div class="left_item">WITHDRAW FEE:</div>
+					<div class="right_item" id="panel_7_fee">---</div>
+				</div>
+				<div id="panel_7_action_buttons" style="display: none;">
+					<input type="text" id="panel_7_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(7);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(7);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(7);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(7);" id="panel_7_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_7_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_7_unlock_inner_button" onclick="unlockWrapper(7);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+			</div>
+
+			<div class="info_div" style="min-height: 390px;">
+				<img src="../../images/dai_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>DAI WRAPPER</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0x6b175474e89094c44da98b954eedeac495271d0f" target="_blank"><button class="light_button">GET DAI &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP DAI INTO zpa-DAI</span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_8_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_8_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_8_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_8_value">---</div>
+					<div class="left_item">WITHDRAW FEE:</div>
+					<div class="right_item" id="panel_8_fee">---</div>
+				</div>
+				<div id="panel_8_action_buttons" style="display: none;">
+					<input type="text" id="panel_8_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(8);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(8);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(8);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(8);" id="panel_8_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_8_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_8_unlock_inner_button" onclick="unlockWrapper(8);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+			</div>
+
+			<div class="info_div" style="min-height: 390px;">
+				<img src="../../images/usdt_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>USDT WRAPPER</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0xdac17f958d2ee523a2206206994597c13d831ec7" target="_blank"><button class="light_button">GET USDT &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP USDT INTO zpa-USDT</span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_9_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_9_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_9_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_9_value">---</div>
+					<div class="left_item">WITHDRAW FEE:</div>
+					<div class="right_item" id="panel_9_fee">---</div>
+				</div>
+				<div id="panel_9_action_buttons" style="display: none;">
+					<input type="text" id="panel_9_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(9);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(9);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(9);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(9);" id="panel_9_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_9_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_9_unlock_inner_button" onclick="unlockWrapper(9);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+			</div>
+
+			<div class="info_div" style="min-height: 390px;">
+				<img src="../../images/susd_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>sUSD WRAPPER</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0x57ab1ec28d129707052df4df418d58a2d46d5f51" target="_blank"><button class="light_button">GET sUSD &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP sUSD INTO zpa-sUSD</span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_10_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_10_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_10_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_10_value">---</div>
+					<div class="left_item">WITHDRAW FEE:</div>
+					<div class="right_item" id="panel_10_fee">---</div>
+				</div>
+				<div id="panel_10_action_buttons" style="display: none;">
+					<input type="text" id="panel_10_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(10);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(10);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(10);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(10);" id="panel_10_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_10_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_10_unlock_inner_button" onclick="unlockWrapper(10);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+			</div>
+
+			<br><br><br>
+			<span style="font-size: 12px; color: black;">Withdrawal fees apply to unwrap zpa-Tokens. The fee is based on the price of the underlying stablecoin. The maximum fee is <strong>0.5%</strong>, the minimum fee is <strong>0.02%</strong>. The lower the price, the higher the fee. All withdrawal fees go to the Stabilize community treasury and staking pool as WETH.</span>
+
+			<div style="width: 60%; margin-left: auto; margin-right: auto; margin-bottom: 5px; margin-top: 20px; font-size: 30px;">&middot; &middot; &middot; &middot; &middot;</div>
+
+			<div class="explainer_div">
+				zs-TOKENS INCREASE IN VALUE AS STRATEGIES BUY MORE OF THE UNDERLYING ASSET
+			</div>
+
+			<div class="info_div" style="min-height: 420px;">
+				<img src="../../images/dai_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>DAI WRAPPER</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0x6b175474e89094c44da98b954eedeac495271d0f" target="_blank"><button class="light_button">GET DAI &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP DAI INTO zs-DAI<br><strong>DEPOSITS LOCKED</strong></span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_5_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_5_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_5_value">---</div>
+				</div>
+				<div id="panel_5_action_buttons" style="display: none;">
+					<input type="text" id="panel_5_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(5);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(5);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;">WRAP LOCKED</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(5);" id="panel_5_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_5_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_5_unlock_inner_button" onclick="unlockWrapper(5);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+			</div>
+
+			<div class="info_div" style="min-height: 420px; display: none;">
+				<img src="../../images/all_stables_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>MULTI-COIN WRAPPER</strong></span><br>
+				<select id="panel_6_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
+					<option value="0" selected>DAI DEPOSIT</option>
+					<option value="1">USDC DEPOSIT</option>
+					<option value="2">USDT DEPOSIT</option>
+					<option value="3">sUSD DEPOSIT</option>
+				</select>
+				<br>
+				<span style="font-size: 14px;">WRAP DAI, USDC, USDT, sUSD INTO zs-USD TO EARN INTEREST</span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_6_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_6_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_6_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_6_value">---</div>
+					<div class="left_item">WITHDRAW TOKEN:</div>
+					<div class="right_item" id="panel_6_withdrawtoken">---</div>
+				</div>
+				<div id="panel_6_action_buttons" style="display: none;">
+					<input type="text" id="panel_6_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(6);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(6);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(6);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(6);" id="panel_6_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_6_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_6_unlock_inner_button" onclick="unlockWrapper(6);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+			</div>
+
+			<br><br>
+			<span style="font-size: 12px; color: black;">There are no withdrawal fees to unwrap zs-Tokens. Some strategies give accessory tokens based on deposit time. Each deposit resets that time.</span>
+
+			<div style="width: 60%; margin-left: auto; margin-right: auto; margin-bottom: 5px; margin-top: 20px; font-size: 30px;">&middot; &middot; &middot; &middot; &middot;</div>
+
+			<div class="explainer_div">
 				za-TOKENS INCREASE IN VALUE AS INTEREST ACCRUES ON THE UNDERLYING ASSET
 			</div>
 
@@ -189,43 +385,7 @@
 			</div>
 
 			<br><br><br>
-			<span style="font-size: 12px; color: black;">Withdrawal fees apply to unwrap za-Tokens. They start at <strong>1%</strong> and decrease every second to <strong>0.1%</strong> after 7 days. Each deposit resets the time.<br>All withdrawal fees go to the Stabilize Community Treasury.</span>
-
-			<div style="width: 60%; margin-left: auto; margin-right: auto; margin-bottom: 5px; margin-top: 20px; font-size: 30px;">&middot; &middot; &middot; &middot; &middot;</div>
-
-			<div class="explainer_div">
-				zs-TOKENS INCREASE IN VALUE AS STRATEGIES BUY MORE OF THE UNDERLYING ASSET
-			</div>
-
-			<div class="info_div" style="min-height: 390px;">
-				<img src="../../images/dai_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>DAI WRAPPER</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0x6b175474e89094c44da98b954eedeac495271d0f" target="_blank"><button class="light_button">GET DAI &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP DAI INTO zs-DAI<br><strong>DEPOSITS LOCKED</strong></span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_5_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_5_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_5_value">---</div>
-				</div>
-				<div id="panel_5_action_buttons" style="display: none;">
-					<input type="text" id="panel_5_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(5);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(5);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;">WRAP LOCKED</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(5);" id="panel_5_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_5_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_5_unlock_inner_button" onclick="unlockWrapper(5);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<br><br>
-			<span style="font-size: 12px; color: black;">There are no withdrawal fees to unwrap zs-Tokens. Some strategies give accessory tokens based on deposit time. Each deposit resets that time.</span>
+			<span style="font-size: 12px; color: black;">Withdrawal fees apply to unwrap za-Tokens. They start at <strong>1%</strong> and decrease every second to <strong>0.1%</strong> after 7 days. Each deposit resets the time.<br>All withdrawal fees go to the Stabilize community treasury.</span>
 
 		</div>	
 	</div>
