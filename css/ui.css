@@ -12,6 +12,17 @@ body{
 	padding: 10px;
 }
 
+#pool_action{
+	color: rgb(100,100,180); 
+	font-size: 14px; 
+	cursor: pointer;
+	display: none;
+}
+
+#pool_action:hover{
+	text-decoration: underline;;
+}
+
 #logo_img{
 	max-width: 415px;
 	height: auto;
