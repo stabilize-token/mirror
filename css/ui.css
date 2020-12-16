@@ -23,6 +23,14 @@ body{
 	text-decoration: underline;;
 }
 
+#inactive_pool_active{
+	cursor: pointer;
+}
+
+#inactive_pool_active:hover{
+	text-decoration: underline;
+}
+
 #logo_img{
 	max-width: 415px;
 	height: auto;
