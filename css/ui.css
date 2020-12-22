@@ -20,7 +20,7 @@ body{
 }
 
 #pool_action:hover{
-	text-decoration: underline;;
+	text-decoration: underline;
 }
 
 #inactive_pool_active{
@@ -59,6 +59,12 @@ body{
 	font-size: 20px;
 	font-weight: bold;
 	color: rgb(100,100,100);
+}
+
+#cover_div{
+	margin-top: 0px;
+	margin-bottom: 30px;
+	text-align: right;
 }
 
 .menu_item{
@@ -331,5 +337,9 @@ body{
 	}
 	#request_column {
 		border-left: none;
+	}
+	#cover_div{
+		margin-top: 20px;
+		text-align: center;
 	}
 }
