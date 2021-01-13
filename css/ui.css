@@ -237,7 +237,7 @@ body{
 .social_link{
 	opacity: 0.5;
 	transition: opacity 0.5s ease;
-	vertical-align: middle;
+	vertical-align: top;
 }
 
 .social_link:hover{
