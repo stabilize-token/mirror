@@ -76,7 +76,7 @@
 
 			<span style="color: rgb(40,40,40); font-size: 16px;">WRAP YOUR TOKENS INTO INTEREST EARNING z-TOKENS<br><br></span>
 
-<div class="explainer_div">
+			<div class="explainer_div">
 				zs-TOKENS INCREASE IN VALUE AS STRATEGIES BUY MORE OF THE UNDERLYING ASSET
 			</div>
 
@@ -208,6 +208,35 @@
 				</div>
 				<div id="panel_14_unlock_button" class="unlock_wrap_div">
 					<button class="dark_button" id="panel_14_unlock_inner_button" onclick="unlockWrapper(14);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+			</div>
+
+			<div class="info_div" style="min-height: 420px;">
+				<img src="../../images/ust_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>UST WRAPPER</strong></span><br>
+				<a href="https://uniswap.exchange/swap/0xa47c8bf37f92abed4a126bda807a7b7498661acd" target="_blank"><button class="light_button">GET UST &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP UST TO EARN INTEREST<br></span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_15_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_15_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_15_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_15_value">---</div>
+					<div class="left_item">WITHDRAW TOKEN:</div>
+					<div class="right_item" id="panel_15_withdrawtoken">---</div>
+				</div>
+				<div id="panel_15_action_buttons" style="display: none;">
+					<input type="text" id="panel_15_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(15);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(15);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(15);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(15);" id="panel_15_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_15_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_15_unlock_inner_button" onclick="unlockWrapper(15);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
 				</div>
 			</div>
 
