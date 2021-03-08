@@ -150,6 +150,40 @@
 			</div>
 
 			<div class="info_div" style="min-height: 420px;">
+				<img src="../../images/eth_proxies_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>ETH PROXY WRAPPER</strong></span><br>
+				<select id="panel_16_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
+					<option value="0" selected>WETH DEPOSIT</option>
+					<option value="1">ANKRETH DEPOSIT</option>
+					<option value="2">STETH DEPOSIT</option>
+				</select>
+				<br>
+				<span style="font-size: 14px;">WRAP WETH, ANKRETH, STETH INTO zs-ETH TO EARN INTEREST</span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_16_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_16_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_16_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_16_value">---</div>
+					<div class="left_item">WITHDRAW TOKEN:</div>
+					<div class="right_item" id="panel_16_withdrawtoken">---</div>
+				</div>
+				<div id="panel_16_action_buttons" style="display: none;">
+					<input type="text" id="panel_16_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(16);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(16);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(16);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(16);" id="panel_16_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_16_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_16_unlock_inner_button" onclick="unlockWrapper(16);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+			</div>
+
+			<div class="info_div" style="min-height: 420px;">
 				<img src="../../images/ed_seigniorages_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
 				<span style="font-size: 16px; vertical-align: top;"><strong>SEIGNIORAGE WRAPPER</strong></span><br>
 				<select id="panel_12_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
