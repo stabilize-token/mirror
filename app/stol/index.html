@@ -125,7 +125,7 @@
 					<input type="text" id="lp_amount" class="input_box" value="0" placeholder="Enter LP Amount">
 					<br>
 					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxLPIn();">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxLPOut();">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="stakeLP();">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstakeLP();" id="lp_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="margin-top: 5px; display: none;" onclick="claimSTOL();" id="claim_button">CLAIM STOL &gt;</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="stakeLP();">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstakeLP();" id="lp_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="margin-top: 5px; display: none;" onclick="claimSTOL();" id="claim_button">CLAIM &gt;</button>
 				</div>
 			</div><div class="info_div" id="stol_window_side" style="min-height: 300px; text-align: left; width: 300px; padding-bottom: 20px;">
 				<div class="info_window">
@@ -134,7 +134,8 @@
 						<li>STAKE REQUIRED STBZ.</li>
 						<li>STAKE UNISWAP STOL LP.</li>
 						<li><span style="color: black;">WAIT AT LEAST 3 DAYS TO CLAIM.</span></li>
-						<li><span style="color: black;">EARN UP TO 4% OF STOL IN LP HOLDINGS PER CLAIM</span> BASED ON BALANCE DECREASE FROM LAST ETH BALANCE.</li>
+						<li><span style="color: black;">EARN UP TO 4% OF STOL IN LP HOLDINGS AFTER 3 DAYS</span> BASED ON BALANCE DECREASE FROM LAST ETH BALANCE.</li>
+						<li><span style="color: black;">EARNINGS WILL ACCUMULATE</span> UP TO 100% OF STOL IN LP HOLDINGS AFTER 6 MONTHS LEFT UNCLAIMED.</span>
 						<li>STAKED LP IS LOCKED FOR <span style="color: black;">24 HOURS AFTER CLAIMING.</span></li>
 						<li>EACH CLAIM RESETS THE TIME TO CLAIM TO AT LEAST 3 DAYS.</li>
 						<li><span style="color: black;">EACH NEW STAKE RESETS THE TIME TO CLAIM TO AT LEAST 3 DAYS.</span></li>
