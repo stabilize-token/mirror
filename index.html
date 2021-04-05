@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="css/bootstrap.css" >
 <link rel="stylesheet" href="css/bootstrap-theme.css">
 <script src="js/bignumber.js"></script>
-<script src="js/interface.min.js"></script>
+<script src="js/starter.min.js"></script>
 <link rel="stylesheet" href="css/ui.css">
 <link rel="shortcut icon" href="favicon.png" type="image/png">
 
@@ -32,18 +32,19 @@
 	<div class="row featurette">
 		<div class="col-md-3" id="logo_div">
 			<img src="images/icon.png" class="img-fluid" style="width: auto; max-height: 40px;">
+			<div id="bsc_header" style="color: rgb(240,185,11); font-size: 16px; display: none;">BSC</div>
 		</div>
 		<div class="col-md-6" id="menu_div">
 			<div class="menu_item">
 				<span style="color: black;">HOME</span>
 			</div>
-			<div class="menu_item">
-				<a href="app/" style="color: rgb(150,150,150);">POOLS</a>
+			<div class="menu_item" id="pool_link_div">
+				<a href="app/" style="color: rgb(150,150,150);" id="pool_link">POOLS</a>
 			</div>
 			<div class="menu_item">
-				<a href="app/wrap/" style="color: rgb(150,150,150);">WRAP</a>
+				<a href="app/wrap/" style="color: rgb(150,150,150);" id="wrap_link">WRAP</a>
 			</div>
-			<div class="menu_item">
+			<div class="menu_item" id="acc_link_div">
 				<a href="app/accounts/" style="color: rgb(150,150,150);">ACC</a>
 			</div>
 			<div class="menu_item">
@@ -52,7 +53,7 @@
 			<div class="menu_item">
 				<a href="https://stabilize-finance.gitbook.io/stabilize-finance-wiki/" target="_blank" style="color: rgb(150,150,150);">DOCS</a>
 			</div>
-			<div class="menu_item">
+			<div class="menu_item" id="stol_link_div">
 				<a href="app/stol/" style="color: rgb(150,150,150);">STOL</a>
 			</div>
 		</div>
@@ -68,26 +69,31 @@
 			<br><br>
 			<span style="color: rgb(40,40,40); font-size: 16px;">Earn STBZ for keeping stablecoins on their pegs</span> 
 			<br><br><br>
-			<a href="app/"><button class="dark_button">GET STARTED</button></a>
+			<a href="app/" id="get_started_link"><button class="dark_button">GET STARTED</button></a>
 			<a href="https://stabilize.medium.com/" target="_blank"><button class="light_button">LEARN MORE</button></a>
 			<div style="color: rgb(40,40,40); font-size: 14px; margin-top: 15px;">Audited by <a href="https://bramah.systems/audits/Stabilize_Finance_Audit_Bramah.pdf" target="_blank">Bramah</a> &amp; <a href="https://defiyield.info/assets/pdf/stabilize.pdf" target="_blank">DefiYield</a></div>
 		</div>
 		<div class="col-md-12" id="price_div" style="text-align: center; vertical-align: middle; visibility: hidden;">
-			<div class="price_panel">
-				<img src="images/dai_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
-				DAI: <span id="price_panel_0">---</span>
+			<div id="inner_price_div">
+				<div class="price_panel">
+					<img src="images/dai_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
+					DAI: <span id="price_panel_0">---</span>
+				</div>
+				<div class="price_panel">
+					<img src="images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
+					USDC: <span id="price_panel_1">---</span>
+				</div>
+				<div class="price_panel">
+					<img src="images/usdt_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
+					USDT: <span id="price_panel_2">---</span>
+				</div>
+				<div class="price_panel">
+					<img src="images/susd_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
+					sUSD: <span id="price_panel_3">---</span>
+				</div>
 			</div>
-			<div class="price_panel">
-				<img src="images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
-				USDC: <span id="price_panel_1">---</span>
-			</div>
-			<div class="price_panel">
-				<img src="images/usdt_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
-				USDT: <span id="price_panel_2">---</span>
-			</div>
-			<div class="price_panel">
-				<img src="images/susd_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle; top: -2px; position: relative;">
-				sUSD: <span id="price_panel_3">---</span>
+			<div id="inner_bsc_div" style="display: none; padding-bottom: 15px;">
+				<img src="images/busd_icon_small.png" class="img-fluid" style="width: auto; max-height: 50px; vertical-align: middle;"> <span style="font-size: 24px; vertical-align: middle;">BSC EDITION</span>
 			</div>
 		</div>
 	</div>
