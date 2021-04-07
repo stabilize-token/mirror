@@ -328,6 +328,10 @@ body{
 	border-left: 2px solid rgb(200,200,200);
 }
 
+.stbb_wrap_border {
+	margin-bottom: 0px;
+}
+
 @media screen and (max-width: 991px) {
 	#logo_div{
 		text-align: center;
@@ -381,5 +385,8 @@ body{
 	#stol_lp_unlock_button_div{
 		padding-top: 10px; 
 		padding-bottom: 0px;
+	}
+	.stbb_border {
+		margin-bottom: 10px;
 	}
 }
