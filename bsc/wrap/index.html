@@ -439,6 +439,54 @@
 			</div>
 
 			<div class="info_div" style="min-height: 585px;">
+				<img src="../../images/dolly_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>DOLLY WRAPPER</strong></span><br>
+				<a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xfF54da7CAF3BC3D34664891fC8f3c9B6DeA6c7A5" target="_blank"><button class="light_button">GET DOLLY &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP DOLLY INTO zsb-DOLLY (DOLLY/BUSD) TO EARN INTEREST<br></span>
+				<div class="info_window">
+					<div class="left_item">STRAT APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_9_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_9_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_9_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_9_value">---</div>
+					<div class="left_item">WITHDRAW TOKEN:</div>
+					<div class="right_item" id="panel_9_withdrawtoken">---</div>
+					<div class="left_item">STAKE APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_9_stbb_apr">---</div>
+					<div class="left_item">STAKE APY*:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_9_stbb_apy">---</div>
+					<div class="left_item">TOTAL STBB:</div>
+					<div class="right_item" id="panel_9_stbb_total">---</div>
+					<div class="left_item">STBB BALANCE:</div>
+					<div class="right_item" id="panel_9_stbb_balance">---</div>
+					<div class="left_item">WBNB EARNED:</div>
+					<div class="right_item" id="panel_9_wbnb_balance">---</div>
+				</div>
+				<div id="panel_9_action_buttons" style="display: none;">
+					<input type="text" id="panel_9_amount" class="input_box" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(9);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(9);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(9);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(9);" id="panel_9_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_9_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_9_unlock_inner_button" onclick="unlockWrapper(9);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+				<div id="panel_9_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+				<div id="panel_9_stake_buttons" style="display: none; margin-top: 5px;">
+					<input type="text" id="panel_9_stake_amount" class="input_box" placeholder="Enter STBB Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeIn(9);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxStakeOut(9);">MAX OUT</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="stake(9);">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(9);" id="panel_9_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(9);" id="panel_9_claim_stake_button">CLAIM WBNB &gt;</button>
+				</div>
+				<div id="panel_9_unlock_stake_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_9_unlock_stake_inner_button" onclick="unlockStakeWrapper(9);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
+				</div>
+			</div>
+
+			<div class="info_div" style="min-height: 585px;">
 				<img src="../../images/mdo_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
 				<span style="font-size: 16px; vertical-align: top;"><strong>MDO WRAPPER (INACTIVE)</strong></span><br>
 				<a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x35e869B7456462b81cdB5e6e42434bD27f3F788c" target="_blank"><button class="light_button">GET MDO &gt;</button></a><br>
