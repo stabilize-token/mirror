@@ -301,6 +301,37 @@
 				</div>
 			</div>
 
+			<div class="info_div">
+				<img src="../images/ust_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>zsb-UST POOL</strong></span><br>
+				<a href="wrap/"><button class="light_button">GET zsb-UST &gt;</button></a><br>
+				<div class="info_window">
+					<div class="left_item">DAILY ROI:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_10_dpy">---</div>
+					<div class="left_item">APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_10_apr">---</div>
+					<div class="left_item">APY*:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_10_apy">---</div>
+					<div class="left_item">POOL SIZE:</div>
+					<div class="right_item" id="panel_10_poolsize">---</div>
+					<div class="left_item">BALANCE:</div>
+					<div class="right_item" id="panel_10_mybalance">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_10_value">---</div>
+					<div class="left_item">STBB EARNED:</div>
+					<div class="right_item" id="panel_10_rewardbalance">---</div>
+				</div>
+				<div id="panel_10_action_buttons" style="display: none;">
+					<input type="text" id="panel_10_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(10);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(10);">MAX OUT</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(10);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(10);" id="panel_10_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(10);" id="panel_10_claim_button">CLAIM STBB &gt;</button>
+				</div>
+				<div id="panel_10_unlock_button" class="unlock_div">
+					<button class="dark_button" id="panel_10_unlock_inner_button" onclick="unlockToken(10);">UNLOCK zsb-UST TO ENTER &gt;</button>
+				</div>
+			</div>
+
 			<br><br>
 			<span style="font-size: 12px; color: black;">* Yearly yield if manually compounded every week.</span>
 
