@@ -332,6 +332,11 @@ body{
 	margin-bottom: 0px;
 }
 
+#reeth_promo_logo {
+	width: auto; 
+	height: 435px;
+}
+
 @media screen and (max-width: 991px) {
 	#logo_div{
 		text-align: center;
@@ -388,5 +393,10 @@ body{
 	}
 	.stbb_border {
 		margin-bottom: 10px;
+	}
+	#reeth_promo_logo {
+		width: 95%;
+		max-width: 435px;
+		height: auto;
 	}
 }
