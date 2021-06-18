@@ -133,55 +133,6 @@
 			</div>
 
 			<div class="info_div" style="min-height: 585px;">
-				<img src="../../images/iron_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>IRON WRAPPER V2</strong></span><br>
-				<a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x7b65B489fE53fCE1F6548Db886C08aD73111DDd8" target="_blank"><button class="light_button">GET IRON &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP IRON INTO zsb-IRON2 (IRON/BUSD) TO EARN INTEREST</span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">STRAT APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_10_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_10_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_10_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_10_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_10_withdrawtoken">---</div>
-					<div class="left_item">STAKE APR:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_10_stbb_apr">---</div>
-					<div class="left_item">STAKE APY*:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_10_stbb_apy">---</div>
-					<div class="left_item">TOTAL STBB:</div>
-					<div class="right_item" id="panel_10_stbb_total">---</div>
-					<div class="left_item">STBB BALANCE:</div>
-					<div class="right_item" id="panel_10_stbb_balance">---</div>
-					<div class="left_item">WBNB EARNED:</div>
-					<div class="right_item" id="panel_10_wbnb_balance">---</div>
-				</div>
-				<div id="panel_10_action_buttons" style="display: none;">
-					<input type="text" id="panel_10_amount" class="input_box" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(10);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(10);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(10);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(10);" id="panel_10_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_10_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_10_unlock_inner_button" onclick="unlockWrapper(10);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-				<div id="panel_10_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-				<div id="panel_10_stake_buttons" style="display: none; margin-top: 5px;">
-					<input type="text" id="panel_10_stake_amount" class="input_box" placeholder="Enter STBB Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeIn(10);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxStakeOut(10);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="stake(10);">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(10);" id="panel_10_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(10);" id="panel_10_claim_stake_button">CLAIM WBNB &gt;</button>
-				</div>
-				<div id="panel_10_unlock_stake_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_10_unlock_stake_inner_button" onclick="unlockStakeWrapper(10);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 585px;">
 				<img src="../../images/bsc_eth_proxies_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
 				<span style="font-size: 16px; vertical-align: top;"><strong>ETH PROXY WRAPPER</strong></span><br>
 				<select id="panel_3_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
@@ -232,60 +183,6 @@
 				</div>
 				<div id="panel_3_unlock_stake_button" class="unlock_wrap_div">
 					<button class="dark_button" id="panel_3_unlock_stake_inner_button" onclick="unlockStakeWrapper(3);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 585px;">
-				<img src="../../images/bsc_btc_proxies_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>BTC PROXY WRAPPER</strong></span><br>
-				<select id="panel_5_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
-					<option value="0" selected>BTCB DEPOSIT</option>
-					<option value="1">renBTC DEPOSIT</option>
-					<option value="2">DBTC DEPOSIT</option>
-				</select>
-				<br>
-				<span style="font-size: 14px;">WRAP BTCB, renBTC, DBTC INTO zsb-BTC TO EARN INTEREST</span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">STRAT APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_5_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_5_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_5_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_5_withdrawtoken">---</div>
-					<div class="left_item">STAKE APR:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_stbb_apr">---</div>
-					<div class="left_item">STAKE APY*:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_stbb_apy">---</div>
-					<div class="left_item">TOTAL STBB:</div>
-					<div class="right_item" id="panel_5_stbb_total">---</div>
-					<div class="left_item">STBB BALANCE:</div>
-					<div class="right_item" id="panel_5_stbb_balance">---</div>
-					<div class="left_item">WBNB EARNED:</div>
-					<div class="right_item" id="panel_5_wbnb_balance">---</div>
-				</div>
-				<div id="panel_5_action_buttons" style="display: none;">
-					<input type="text" id="panel_5_amount" class="input_box" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(5);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(5);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(5);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(5);" id="panel_5_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_5_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_5_unlock_inner_button" onclick="unlockWrapper(5);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-				<div id="panel_5_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-				<div id="panel_5_stake_buttons" style="display: none; margin-top: 5px;">
-					<input type="text" id="panel_5_stake_amount" class="input_box" placeholder="Enter STBB Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeIn(5);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxStakeOut(5);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="stake(5);">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(5);" id="panel_5_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(5);" id="panel_5_claim_stake_button">CLAIM WBNB &gt;</button>
-				</div>
-				<div id="panel_5_unlock_stake_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_5_unlock_stake_inner_button" onclick="unlockStakeWrapper(5);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 				</div>
 			</div>
 
@@ -430,6 +327,105 @@
 				</div>
 				<div id="panel_9_unlock_stake_button" class="unlock_wrap_div">
 					<button class="dark_button" id="panel_9_unlock_stake_inner_button" onclick="unlockStakeWrapper(9);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
+				</div>
+			</div>
+
+			<div class="info_div" style="min-height: 585px;">
+				<img src="../../images/iron_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>IRON V2 (INACTIVE)</strong></span><br>
+				<a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x7b65B489fE53fCE1F6548Db886C08aD73111DDd8" target="_blank"><button class="light_button">GET IRON &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP IRON INTO zsb-IRON2 (IRON/BUSD) TO EARN INTEREST</span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">STRAT APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_10_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_10_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_10_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_10_value">---</div>
+					<div class="left_item">WITHDRAW TOKEN:</div>
+					<div class="right_item" id="panel_10_withdrawtoken">---</div>
+					<div class="left_item">STAKE APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_10_stbb_apr">---</div>
+					<div class="left_item">STAKE APY*:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_10_stbb_apy">---</div>
+					<div class="left_item">TOTAL STBB:</div>
+					<div class="right_item" id="panel_10_stbb_total">---</div>
+					<div class="left_item">STBB BALANCE:</div>
+					<div class="right_item" id="panel_10_stbb_balance">---</div>
+					<div class="left_item">WBNB EARNED:</div>
+					<div class="right_item" id="panel_10_wbnb_balance">---</div>
+				</div>
+				<div id="panel_10_action_buttons" style="display: none;">
+					<input type="text" id="panel_10_amount" class="input_box" placeholder="Enter Amount">
+					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(10);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(10);" id="panel_10_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_10_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_10_unlock_inner_button" onclick="unlockWrapper(10);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+				<div id="panel_10_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+				<div id="panel_10_stake_buttons" style="display: none; margin-top: 5px;">
+					<input type="text" id="panel_10_stake_amount" class="input_box" placeholder="Enter STBB Amount">
+					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(10);">MAX OUT</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(10);" id="panel_10_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(10);" id="panel_10_claim_stake_button">CLAIM WBNB &gt;</button>
+				</div>
+				<div id="panel_10_unlock_stake_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_10_unlock_stake_inner_button" onclick="unlockStakeWrapper(10);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
+				</div>
+			</div>
+
+			<div class="info_div" style="min-height: 585px;">
+				<img src="../../images/bsc_btc_proxies_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>BTC PROXY V1 (INACTIVE)</strong></span><br>
+				<select id="panel_5_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
+					<option value="0" selected>BTCB DEPOSIT</option>
+					<option value="1">renBTC DEPOSIT</option>
+					<option value="2">DBTC DEPOSIT</option>
+				</select>
+				<br>
+				<span style="font-size: 14px;">WRAP BTCB, renBTC, DBTC INTO zsb-BTC TO EARN INTEREST</span>
+				<br>
+				<div class="info_window">
+					<div class="left_item">STRAT APY:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_5_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_5_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_5_value">---</div>
+					<div class="left_item">WITHDRAW TOKEN:</div>
+					<div class="right_item" id="panel_5_withdrawtoken">---</div>
+					<div class="left_item">STAKE APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_stbb_apr">---</div>
+					<div class="left_item">STAKE APY*:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_stbb_apy">---</div>
+					<div class="left_item">TOTAL STBB:</div>
+					<div class="right_item" id="panel_5_stbb_total">---</div>
+					<div class="left_item">STBB BALANCE:</div>
+					<div class="right_item" id="panel_5_stbb_balance">---</div>
+					<div class="left_item">WBNB EARNED:</div>
+					<div class="right_item" id="panel_5_wbnb_balance">---</div>
+				</div>
+				<div id="panel_5_action_buttons" style="display: none;">
+					<input type="text" id="panel_5_amount" class="input_box" placeholder="Enter Amount">
+					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(5);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(5);" id="panel_5_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_5_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_5_unlock_inner_button" onclick="unlockWrapper(5);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+				<div id="panel_5_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+				<div id="panel_5_stake_buttons" style="display: none; margin-top: 5px;">
+					<input type="text" id="panel_5_stake_amount" class="input_box" placeholder="Enter STBB Amount">
+					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(5);">MAX OUT</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(5);" id="panel_5_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(5);" id="panel_5_claim_stake_button">CLAIM WBNB &gt;</button>
+				</div>
+				<div id="panel_5_unlock_stake_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_5_unlock_stake_inner_button" onclick="unlockStakeWrapper(5);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 				</div>
 			</div>
 
