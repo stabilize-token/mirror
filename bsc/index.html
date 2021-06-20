@@ -301,37 +301,6 @@
 				</div>
 			</div>
 
-			<div class="info_div">
-				<img src="../images/iron_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>zsb-IRON2 POOL</strong></span><br>
-				<a href="wrap/"><button class="light_button">GET zsb-IRON2 &gt;</button></a><br>
-				<div class="info_window">
-					<div class="left_item">DAILY ROI:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_12_dpy">---</div>
-					<div class="left_item">APR:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_12_apr">---</div>
-					<div class="left_item">APY*:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_12_apy">---</div>
-					<div class="left_item">POOL SIZE:</div>
-					<div class="right_item" id="panel_12_poolsize">---</div>
-					<div class="left_item">BALANCE:</div>
-					<div class="right_item" id="panel_12_mybalance">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_12_value">---</div>
-					<div class="left_item">STBB EARNED:</div>
-					<div class="right_item" id="panel_12_rewardbalance">---</div>
-				</div>
-				<div id="panel_12_action_buttons" style="display: none;">
-					<input type="text" id="panel_12_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(12);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(12);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(12);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(12);" id="panel_12_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(12);" id="panel_12_claim_button">CLAIM STBB &gt;</button>
-				</div>
-				<div id="panel_12_unlock_button" class="unlock_div">
-					<button class="dark_button" id="panel_12_unlock_inner_button" onclick="unlockToken(12);">UNLOCK zsb-IRON2 TO ENTER &gt;</button>
-				</div>
-			</div>
-
 			<br><br>
 			<span style="font-size: 12px; color: black;">* Yearly yield if manually compounded every week.</span>
 
@@ -340,6 +309,36 @@
 
 			<div id="inactive_pool_container" style="display: none; margin-bottom: 10px;">
 				<br><br>
+
+				<div class="info_div">
+					<img src="../images/iron_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+					<span style="font-size: 16px; vertical-align: top;"><strong>zsb-IRON2 (INACTIVE)</strong></span><br>
+					<a href="wrap/"><button class="light_button">GET zsb-IRON2 &gt;</button></a><br>
+					<div class="info_window">
+						<div class="left_item">DAILY ROI:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_12_dpy">---</div>
+						<div class="left_item">APR:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_12_apr">---</div>
+						<div class="left_item">APY*:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_12_apy">---</div>
+						<div class="left_item">POOL SIZE:</div>
+						<div class="right_item" id="panel_12_poolsize">---</div>
+						<div class="left_item">BALANCE:</div>
+						<div class="right_item" id="panel_12_mybalance">---</div>
+						<div class="left_item">VALUE:</div>
+						<div class="right_item" id="panel_12_value">---</div>
+						<div class="left_item">STBB EARNED:</div>
+						<div class="right_item" id="panel_12_rewardbalance">---</div>
+					</div>
+					<div id="panel_12_action_buttons" style="display: none;">
+						<input type="text" id="panel_12_amount" class="input_box" value="0" placeholder="Enter Amount">
+						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(12);">MAX OUT</button>
+						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(12);" id="panel_12_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(12);" id="panel_12_claim_button">CLAIM STBB &gt;</button>
+					</div>
+					<div id="panel_12_unlock_button" class="unlock_div">
+						<button class="dark_button" id="panel_12_unlock_inner_button" onclick="unlockToken(12);">UNLOCK zsb-IRON2 TO EXIT &gt;</button>
+					</div>
+				</div>
 
 				<div class="info_div">
 					<img src="../images/mbdo_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
