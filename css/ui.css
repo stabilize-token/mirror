@@ -129,6 +129,90 @@ body{
 	word-wrap: break-word;
 }
 
+.swap_box{
+	text-align: left;
+	border: 1px solid rgb(200,200,200);
+	border-radius: 4px;
+	width: 100%;
+	min-height: 50px;
+}
+
+.token_select_button{
+	vertical-align: bottom;
+	text-align: center;
+	display: inline-block;
+	background-color: white;
+	border: 1px solid rgb(200,200,200);
+	border-left: 0px none;
+	border-top: 0px none;
+	border-bottom: 0px none;
+	border-radius: 0px 0px 0px 4px;
+	cursor: pointer;
+	width: 30%;
+	min-height: 40px;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.token_select_button:hover{
+	background-color: rgb(250,250,250);
+}
+
+.token_input_box{
+	vertical-align: bottom;
+	text-align: right;
+	display: inline-block;
+	border-radius: 0px 0px 4px 0px;
+	background-color: white;
+	border: 0px none;
+	width: 70%;
+	min-height: 40px;
+	padding: 10px;
+	font-size: 16px;
+}
+
+#inverse_tokens_button{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: white;
+	border: 2px solid black;
+	height: 30px;
+	width: 30px;
+	border-radius: 15px;
+	display: inline-block;
+}
+
+#inverse_tokens_button:hover{
+	background-color: rgb(250,250,250);
+}
+
+.token_list_row{
+	margin-bottom: 10px;
+	cursor: pointer;
+	padding: 10px;
+}
+
+.token_list_row:hover{
+	background-color: rgb(250,250,250);
+}
+
+.token_list_left_item{
+	display: inline-block;
+	width: 48%;
+	text-align: left;
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+.token_list_right_item{
+	display: inline-block;
+	width: 48%;
+	text-align: right;
+	font-size: 18px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
 .unlock_div{
 	margin-top: 20px; 
 	display: none; 
