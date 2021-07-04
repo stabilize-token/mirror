@@ -45,13 +45,13 @@
 					<span style="color: black;">WRAP</span>
 				</div>
 				<div class="menu_item">
+					<a href="../swaps/" style="color: rgb(150,150,150);">SWAPS</a>
+				</div>
+				<div class="menu_item">
 					<a href="https://snapshot.page/#/stabilize-governance.eth/" target="_blank" style="color: rgb(150,150,150);">GOV</a>
 				</div>
 				<div class="menu_item">
 					<a href="https://s-and-s.gitbook.io/stabilize/" target="_blank" style="color: rgb(150,150,150);">DOCS</a>
-				</div>
-				<div class="menu_item">
-					<a href="../stol/" style="color: rgb(150,150,150);">STOL</a>
 				</div>
 				<div class="menu_item">
 					<a href="../reeth/" style="color: rgb(150,150,150);">REETH</a>
@@ -187,7 +187,7 @@
 			<div class="info_div" style="min-height: 420px;">
 				<img src="../../images/ust_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
 				<span style="font-size: 16px; vertical-align: top;"><strong>UST WRAPPER</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0xa47c8bf37f92abed4a126bda807a7b7498661acd" target="_blank"><button class="light_button">GET UST &gt;</button></a><br>
+				<a href="../swaps/" target="_blank"><button class="light_button">GET UST &gt;</button></a><br>
 				<span style="font-size: 14px;">WRAP UST INTO zs-UST (UST/USDT) TO EARN INTEREST<br></span>
 				<div class="info_window">
 					<div class="left_item">APY (WEEKLY):</div>
@@ -245,6 +245,34 @@
 				</div>
 				<div id="panel_18_unlock_button" class="unlock_wrap_div">
 					<button class="dark_button" id="panel_18_unlock_inner_button" onclick="unlockWrapper(18);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				</div>
+			</div>
+
+			<div class="info_div" style="min-height: 420px; display: none;">
+				<img src="../../images/reeth_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>REETH WRAPPER</strong></span><br>
+				<a href="https://app.sushi.com/swap?outputCurrency=0xe804964c296E9FB666fBE67767838c1FF9Ab3209" target="_blank"><button class="light_button">GET REETH &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP REETH INTO zs-REETH (REETH/WETH) TO EARN INTEREST AND CASHBACK<br></span>
+				<div class="info_window">
+					<div class="left_item">APY (WEEKLY):</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_22_apy">---</div>
+					<div class="left_item">WALLET BALANCE:</div>
+					<div class="right_item" id="panel_22_walletbalance">---</div>
+					<div class="left_item">PRICE/TOKEN:</div>
+					<div class="right_item" id="panel_22_price">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_22_value">---</div>
+					<div class="left_item">WITHDRAW TOKEN:</div>
+					<div class="right_item" id="panel_22_withdrawtoken">---</div>
+				</div>
+				<div id="panel_22_action_buttons" style="display: none;">
+					<input type="text" id="panel_22_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(22);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(22);">MAX UNWRAP</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(22);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(22);" id="panel_22_withdraw_button">UNWRAP &gt;</button>
+				</div>
+				<div id="panel_22_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_22_unlock_inner_button" onclick="unlockWrapper(22);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
 				</div>
 			</div>
 
@@ -309,7 +337,7 @@
 			<div class="info_div" style="min-height: 420px;">
 				<img src="../../images/frax_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
 				<span style="font-size: 16px; vertical-align: top;"><strong>FRAX (INACTIVE)</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0x853d955acef822db058eb8505911ed77f175b99e" target="_blank"><button class="light_button">GET FRAX &gt;</button></a><br>
+				<a href="../swaps/" target="_blank"><button class="light_button">GET FRAX &gt;</button></a><br>
 				<span style="font-size: 14px;">WRAP FRAX INTO zs-FRAX (FRAX/USDC) TO EARN INTEREST</span>
 				<br>
 				<div class="info_window">
