@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Swaps - Powered by REETH</title>
+
+<style>
+@font-face {
+  font-family: SourceCode;
+  src: url("../../images/default_font.ttf");
+}
+</style>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.js"></script>
+<link rel="stylesheet" href="../../css/bootstrap.css" >
+<link rel="stylesheet" href="../../css/bootstrap-theme.css">
+<script src="../../js/bignumber.js"></script>
+<script src="../../js/exchange_interface.min.js"></script>
+<link rel="stylesheet" href="../../css/ui.css" >
+<link rel="shortcut icon" href="../../images/reeth_icon.png" type="image/png">
+
+</head>
+
+<body style="background-color: rgb(248,249,250);">
+
+<div style="background-color: white; box-shadow: rgba(151, 164, 175, 0.1) 0px 0px 10px 0px">
+	<div class="container marketing">
+		<div class="row featurette" style="background-color: white;">
+			<div class="col-md-3" id="logo_div">
+				<img src="../../images/reeth_icon.png" class="img-fluid" style="width: auto; max-height: 40px;">
+			</div>
+			<div class="col-md-6" id="menu_div">
+				<div class="menu_item">
+					<a href="../../" style="color: rgb(150,150,150);">HOME</a>
+				</div>
+				<div class="menu_item">
+					<a href="../" style="color: rgb(150,150,150);">POOLS</a>
+				</div>
+				<div class="menu_item">
+					<a href="../wrap/" style="color: rgb(150,150,150);">WRAP</a>
+				</div>
+				<div class="menu_item">
+					<span style="color: black;">SWAPS</span>
+				</div>
+				<div class="menu_item">
+					<a href="https://snapshot.page/#/stabilize-governance.eth/" target="_blank" style="color: rgb(150,150,150);">GOV</a>
+				</div>
+				<div class="menu_item">
+					<a href="https://s-and-s.gitbook.io/stabilize/" target="_blank" style="color: rgb(150,150,150);">DOCS</a>
+				</div>
+				<div class="menu_item">
+					<a href="../reeth/" style="color: rgb(150,150,150);">REETH</a>
+				</div>
+			</div>
+			<div class="col-md-3" id="metamask_div">
+				<div id="metamask_interactive" onclick="metamaskButtonClick();">
+					Install MetaMask
+				</div>	
+			</div>		
+		</div>
+	</div>
+</div>
+<div class="container marketing">
+	<div class="row featurette" id="loading_panel">
+		<div class="col-md-12" style="margin-top: 200px; text-align: center; margin-bottom: 150px;">
+			<span style="color: rgb(40,40,40); font-size: 20px;">Connect to wallet to view the page</span><br><br>
+		</div>
+	</div>
+	<div class="row featurette" id="data_panel" style="display: none; margin-top: 20px; text-align: center;">
+		<div class="col-md-12" style="margin-top: 10px;">
+			<span style="color: rgb(40,40,40); font-size: 16px;">TRADE TOKENS TO EARN TRADE AND GAS CASHBACKS IN REETH</span><br><br>
+		</div>
+		<div class="col-md-4 col-md-offset-4" style="margin-top: 10px; margin-bottom: 50px;">
+			<div class="general_info_div" style="margin: 0px;">
+				ETH SPENT SINCE LAST CLAIM:<br><span id="eth_spent" style="font-weight: bold; font-size: 18px;">------------------</span>
+			</div>
+		</div>
+		<div class="col-md-6 col-md-offset-3">
+			<div class="info_div" style="width: 95%; max-width: 400px; min-height: 300px; border-radius: 5px;" id="swap_box">
+				<div style="text-align: left;">
+					<span style="font-size: 20px; vertical-align: top;"><strong>TRADE</strong> <small><a style="font-size: 12px;" target="_blank" href="https://github.com/Taichi-Network/docs/blob/master/sendPriveteTx_tutorial.md">MAKE HIDDEN</a></small></span><br>
+				</div>
+				<br>
+				<div class="swap_box">
+					<div style="padding: 5px; font-size: 14px; border-bottom: 1px solid rgb(200,200,200);">
+						SEND
+						<br><span style="font-size: 12px; color: rgb(100,100,100);">BALANCE: <a id="send_balance" style="cursor: pointer;" onclick="selectMaxSend();"></a></span>
+					</div>
+					<div>
+						<div class="token_select_button" onclick="openTokenSearch(0);">
+							<span id="send_token_symbol" style="vertical-align: middle;">ETH</span>
+							<small><span style="vertical-align: middle;" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></small>
+						</div><input type="text" id="send_amount" class="token_input_box" oninput="resetAmountCalculation();" autocomplete="off" placeholder="0">
+					</div>
+				</div>
+				<button id="inverse_tokens_button" onclick="inverseTokens();">&#8595;</button>
+				<div class="swap_box">
+					<div style="padding: 5px; font-size: 14px; border-bottom: 1px solid rgb(200,200,200);">
+						RECEIVE
+						<br><span style="font-size: 12px; color: rgb(100,100,100);">BALANCE: <span id="receive_balance"></span></span>
+					</div>
+					<div>
+						<div class="token_select_button" onclick="openTokenSearch(1);">
+							<span id="receive_token_symbol" style="vertical-align: middle;">---</span> 
+							<small><span style="vertical-align: middle;" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></small>
+						</div><input type="text" id="receive_amount" class="token_input_box" autocomplete="off" placeholder="0" disabled>
+					</div>
+				</div>
+				<div style="font-size: 12px; margin-top: 10px;">
+					<div class="left_item"><a style="font-weight: normal; cursor: pointer;" onclick="openOptionsModal();">OPTIONS</a></div>
+					<div class="right_item" id="max_slippage_outer" style="font-weight: normal;">MAX SLIPPAGE: <span id="max_slippage_inner"></span>%</div>
+				</div>
+				<button class="dark_button" style="min-width: 200px; width: 40%; margin-top: 15px; opacity: 0.7;" disabled onclick="makeAction();" id="swap_action_button">SELECT TOKENS</button>
+			</div><br><br><br><br>
+			<span style="font-size: 12px; color: black;">Reeth contracts are experimental and currently <strong>not audited</strong>.<br>Use at your own risk.</span>
+
+			<div class="modal" tabindex="-1" role="dialog" id="tokenModal" style="text-align: left;">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			        <h5 class="modal-title" style="font-size: 20px;">Token Search</h5><br>
+			        <div style="text-align: left;">
+			        	<span style="vertical-align: middle;" class="glyphicon glyphicon-search" aria-hidden="true"></span>
+			        	<input type="text" id="token_search_box" oninput="resetTokenSearch();" class="token_input_box" autocomplete="off" style="border-radius: 0px; text-align: left; vertical-align: middle; width: 90%;" placeholder="Enter token name, symbol or address">
+			        </div>
+			      </div>
+			      <div class="modal-body" id="token_list" style="max-height: 400px; overflow-y: auto; padding: 0px;">
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="modal" tabindex="-1" role="dialog" id="optionsModal" style="text-align: left;">
+			  <div class="modal-dialog" role="document" style="max-width: 400px;">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			        <h5 class="modal-title" style="font-size: 20px;">Options</h5>
+			      </div>
+			      <div class="modal-body">
+			      	<span style="font-size: 16px;">Max Price Slippage (%):</span><br>
+			      	<input type="text" id="modal_options_slippage" style="font-size: 14px;" class="input_box" placeholder="Enter Desired Max Slippage"><br><br>
+			      	<span style="font-size: 16px;">Max Trade Deadline (Mins):</span><br>
+			      	<input type="text" id="modal_options_deadline" style="font-size: 14px;" class="input_box" placeholder="Enter Desired Max Deadline"><br>
+			      </div>
+			      <div class="modal-footer" style="text-align: center;">
+					<button class="light_button" style="min-width: 100px;" onclick="saveAndCloseOptionsModal();">SAVE AND CLOSE</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+		</div>
+	</div>
+	<div class="row featurette">
+		<div class="col-md-12" id="bottom_div" style="margin-top: 0px; margin-bottom: 30px;"><br>
+			<div style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-bottom: 20px;"> </div>
+			<a href="https://t.me/stabilizeprotocol" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../../images/telegram.png" class="img-fluid" style="width: 40px; height: auto;"></a>
+			<a href="https://github.com/stabilize-token/" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../../images/github.png" class="img-fluid" style="width: 40px; height: auto;"></a>
+			<a href="https://twitter.com/StabilizePro" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../../images/twitter.png" class="img-fluid" style="width: 40px; height: auto;"></a>
+			<a href="https://discord.gg/7hyHRGnnKj" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../../images/discord.png" class="img-fluid" style="width: 40px; height: auto;"></a>
+			<a href="https://defipulse.com" target="_blank" style="margin-top: 5px; margin-left: 20px; margin-right: 20px; display: inline-block;"><img class="social_link" src="../../images/defipulse.png" class="img-fluid" style="width: 40px; height: auto;"></a>
+		</div>	
+	</div>
+
+
+</div>
+
+</body>
+
+</html>
