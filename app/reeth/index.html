@@ -73,33 +73,88 @@
 	</div>
 	<div class="row featurette" id="data_panel" style="display: none; margin-top: 20px; text-align: center;">
 		<div class="col-md-12" style="margin-top: 10px;">
-			<span style="color: rgb(40,40,40); font-size: 16px;">MIGRATE STOL NOW INTO pREETH<br>MIGRATION </span>
-			<span id="countdown_timer" style="color: rgb(40,40,40); font-size: 16px;"></span>CHECK THIS PAGE IN THE COMING DAYS FOR REETH<br><br>
+			<span style="color: rgb(40,40,40); font-size: 16px;">EARN REETH BY STAKING LP OR BY STAKING ZS-REETH AND TRADING<br><br></span>
 		</div>
-		<div class="col-md-4 col-md-offset-4" style="margin-top: 10px; margin-bottom: 50px;">
+		<div class="col-md-4" style="margin-top: 10px;">
 			<div class="general_info_div" style="margin: 0px;">
-				TOTAL pREETH MINTED:<br><span id="preeth_total" style="font-weight: bold; font-size: 18px;">------------------</span>
+				ETH SPENT SINCE LAST CLAIM:<br><span id="eth_spent" style="font-weight: bold; font-size: 18px;">------------------</span>
 			</div>
 		</div>
-		<div class="col-md-12">
-			<div style="text-align: center;">
-				<img src="../../images/reeth_icon_large.png" id="reeth_promo_logo" class="img-fluid">
+		<div class="col-md-4" style="margin-top: 10px;">
+			<div class="general_info_div" style="margin: 0px;">
+				REETH TOTAL SUPPLY:<br><span id="reeth_total" style="font-weight: bold; font-size: 18px;">------------------</span>
 			</div>
-			<br>
-			<span style="font-size: 74px; vertical-align: middle; color: black;">REETH</span>
+		</div>
+		<div class="col-md-4" style="margin-top: 10px;">
+			<div class="general_info_div" style="margin: 0px;">
+				REETH PRICE:<br><span id="reeth_price" style="font-weight: bold; font-size: 18px;">------------------</span>
+			</div>
+		</div>
+		<div class="col-md-12" style="margin-top: 25px; margin-bottom: 25px;">
+			<button class="light_button" id="redeem_action" style="min-width: 300px; display: none;" onclick="getREETHFromPreeth();"></button>
+		</div>
+		<div class="col-md-12" style="margin-top: 10px;">
+
+			<div class="info_div" style="min-height: 420px;">
+				<img src="../../images/reeth_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>REETH LP STAKING POOL</strong></span><br>
+				<a href="https://analytics.sushi.com/pairs/0x974415a21b5897fe78e15f826f5ebc231dcec969" target="_blank"><button class="light_button">GET REETH LP &gt;</button></a><br>
+				<span style="font-size: 14px;">EARN REETH FOR STAKING REETH/ETH SLP<br><br></span>
+				<div class="info_window">
+					<div class="left_item">DAILY ROI:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_lp_dpr">---</div>
+					<div class="left_item">APR:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_lp_apr">---</div>
+					<div class="left_item">APY*:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_lp_apy">---</div>
+					<div class="left_item">POOL SIZE:</div>
+					<div class="right_item" id="panel_lp_poolsize">---</div>
+					<div class="left_item">BALANCE:</div>
+					<div class="right_item" id="panel_lp_mybalance">---</div>
+					<div class="left_item">REETH EARNED:</div>
+					<div class="right_item" id="panel_lp_rewardbalance">---</div>
+				</div>
+				<div id="panel_lp_action_buttons" style="display: none;">
+					<input type="text" id="panel_lp_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(0);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(0);">MAX OUT</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(0);">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(0);" id="panel_lp_withdraw_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(0, this);" id="panel_lp_claim_button">CLAIM REETH &gt;</button>
+				</div>
+				<div id="panel_lp_unlock_button_div" class="unlock_div" style="padding-top: 10px;">
+					<button class="dark_button" id="panel_lp_unlock_inner_button" onclick="unlockToken(0, this);">UNLOCK LP TO STAKE &gt;</button>
+				</div>
+			</div>
+
+			<div class="info_div" style="min-height: 420px;">
+				<img src="../../images/reeth_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>zs-REETH STAKING POOL</strong></span><br>
+				<a href="../wrap/" target="_blank"><button class="light_button">GET zs-REETH &gt;</button></a><br>
+				<span style="font-size: 14px;">EARN REETH TRADE CASHBACK<br>FOR STAKING zs-REETH<br></span>
+				<div class="info_window">
+					<div class="left_item">BALANCE:</div>
+					<div class="right_item" id="panel_zs_mybalance">---</div>
+					<div class="left_item">VALUE:</div>
+					<div class="right_item" id="panel_zs_value">---</div>
+					<div class="left_item">ELIGIBLE SPENT:</div>
+					<div class="right_item" id="panel_zs_eligiblespent">---</div>
+					<div class="left_item">CLAIM %:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_zs_percent">---</div>
+					<div class="left_item">CLAIMABLE:</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_zs_claimable">---</div>
+				</div>
+				<div id="panel_zs_action_buttons" style="display: none; margin-top: 17px;">
+					<input type="text" id="panel_zs_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(1);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(1);">MAX OUT</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(1);">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(1);" id="panel_zs_withdraw_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(1, this);" id="panel_zs_claim_button">CLAIM REETH &gt;</button>
+				</div>
+				<div id="panel_zs_unlock_button_div" class="unlock_div" style="padding-top: 28px;">
+					<button class="dark_button" id="panel_zs_unlock_inner_button" onclick="unlockToken(1, this);">UNLOCK zs-REETH TO STAKE &gt;</button>
+				</div>
+			</div>
+
 			<br><br>
-			<div class="info_div" style="min-height: 100px; min-width: 400px;" id="migration_box">
-				<span style="font-size: 14px; vertical-align: middle;">STOL SNAPSHOT PRICE: 0.000213729 pREETH<br>4678.82 STOL PER pREETH</span><br>
-				<div id="preeth_action_button" style="display: none;">
-					<input type="text" id="stol_migrate_amount" autocomplete="off" oninput="recalculatePReeth();" class="input_box" value="0" placeholder="Enter STOL Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxSTOL();">MAX IN</button>
-					<br><button class="dark_button" id="preeth_button" style="min-width: 0px; max-width: 95%; margin: 2px; padding-left: 40px; padding-right: 40px;" onclick="burnSTOL();">GET 0 pREETH &gt;</button>
-				</div>
-				<div id="preeth_unlock_button" class="unlock_wrap_div" style="padding-top: 10px;">
-					<button class="dark_button" id="preeth_unlock_inner_button" onclick="unlockSTOL();" style="min-width: 200px;">UNLOCK STOL &gt;</button>
-				</div>
-			</div><br><br>
-			<span style="font-size: 12px; color: black;">Reeth contracts are experimental and currently <strong>not audited</strong>. Use at your own risk.</span>
+			<span style="font-size: 12px; color: black;">Reeth contracts are experimental and currently <strong>not audited</strong>. Use at your own risk.<br>* Yearly yield if manually compounded every week.</span>
 		</div>
 	</div>
 	<div class="row featurette">
