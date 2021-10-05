@@ -81,8 +81,8 @@
 			<span id="countdown_timer" style="color: rgb(40,40,40); font-size: 16px;"></span><br>
 		</div>
 		<div class="col-md-12">
-			<div class="info_div" style="min-height: 100px; min-width: 350px;" id="migration_box">
-				<span style="font-size: 14px; vertical-align: middle;">LOCK ETH-STBZ TO CLAIM ARB-STBZ AT 1:3 RATIO AFTER MIGRATION ENDS</span><br>
+			<div class="info_div" style="min-height: 100px; min-width: 350px;">
+				<span style="font-size: 14px; vertical-align: middle;">LOCK STBZ TO CLAIM ARB-BASED STBZ AT 1:3 RATIO AFTER MIGRATION ENDS</span><br>
 				<div class="info_window">
 					<div class="left_item">TOTAL LOCKED:</div>
 					<div class="right_item" id="total_locked">---</div>
@@ -91,13 +91,15 @@
 					<div class="left_item">CLAIMABLE:</div>
 					<div class="right_item" id="my_claimable">---</div>
 				</div>
-				<div id="stbz_action_button" style="display: none;">
-					<input type="text" id="stbz_migrate_amount" autocomplete="off" class="input_box" value="0" placeholder="Enter STBZ Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxSTBZ();">MAX IN</button>
-					<br><button class="dark_button" id="lock_button" style="min-width: 0px; max-width: 95%; margin: 2px; padding-left: 40px; padding-right: 40px;" onclick="lockSTBZ();">LOCK STBZ &gt;</button>
-				</div>
-				<div id="stbz_unlock_button" class="unlock_wrap_div" style="padding-top: 10px;">
-					<button class="dark_button" id="stbz_unlock_inner_button" onclick="unlockSTBZ();" style="min-width: 200px;">UNLOCK STBZ &gt;</button>
+				<div id="migration_box">
+					<div id="stbz_action_button" style="display: none;">
+						<input type="text" id="stbz_migrate_amount" autocomplete="off" class="input_box" value="0" placeholder="Enter STBZ Amount">
+						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxSTBZ();">MAX IN</button>
+						<br><button class="dark_button" id="lock_button" style="min-width: 0px; max-width: 95%; margin: 2px; padding-left: 40px; padding-right: 40px;" onclick="lockSTBZ();">LOCK STBZ &gt;</button>
+					</div>
+					<div id="stbz_unlock_button" class="unlock_wrap_div" style="padding-top: 10px;">
+						<button class="dark_button" id="stbz_unlock_inner_button" onclick="unlockSTBZ();" style="min-width: 200px;">UNLOCK STBZ &gt;</button>
+					</div>
 				</div>
 			</div><br><br>
 		</div>
