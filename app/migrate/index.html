@@ -71,35 +71,26 @@
 <div class="container marketing">
 	<div class="row featurette" id="loading_panel">
 		<div class="col-md-12" style="margin-top: 200px; text-align: center; margin-bottom: 150px;">
-			<span style="color: rgb(40,40,40); font-size: 20px;">Connect to wallet to view the page</span><br><br>
+			<span style="color: rgb(40,40,40); font-size: 20px;" id="connection_text">Connect to wallet to view the page</span><br><br>
 		</div>
 	</div>
 	<div class="row featurette" id="data_panel" style="display: none; margin-top: 20px; text-align: center;">
 		<div class="col-md-12" style="margin-top: 10px;">
-			<span style="color: rgb(40,40,40); font-size: 16px;">STABILIZE IS MIGRATING TO ARBITRUM ONE. <a href="https://stabilize.medium.com/stabilize-eth-migration-to-arbitrum-one-will-begin-september-23rd-6a26b9acd85?source=friends_link&sk=a617d9dc3dc52ebf8fa25df5f9a321aa" target="_blank">READ HERE TO LEARN WHY.</a><br><br></span>
-			<span style="color: rgb(40,40,40); font-size: 16px;">MIGRATION DEADLINE:<br></span>
-			<span id="countdown_timer" style="color: rgb(40,40,40); font-size: 16px;"></span><br>
+			<span style="color: rgb(40,40,40); font-size: 16px;">STABILIZE HAS MIGRATED TO ARBITRUM ONE<br>CLAIM YOUR STBZ TOKENS BELOW<br><br></span>
 		</div>
 		<div class="col-md-12">
-			<div class="info_div" style="min-height: 100px; min-width: 350px;">
-				<span style="font-size: 14px; vertical-align: middle;">LOCK STBZ TO CLAIM ARB-BASED STBZ AT 1:3 RATIO AFTER MIGRATION ENDS</span><br>
+			<div class="info_div" style="min-height: 100px; min-width: 350px; margin-top: 50px; margin-bottom: 50px;">
+				<span style="font-size: 14px; vertical-align: middle;">REDEEM ARB-BASED STBZ FROM ETH-BASED STBZ AT 1:3 RATIO</span><br>
 				<div class="info_window">
 					<div class="left_item">TOTAL LOCKED:</div>
-					<div class="right_item" id="total_locked">---</div>
+					<div class="right_item" id="total_locked">587968.753 ETH-STBZ</div>
 					<div class="left_item">MY AMOUNT:</div>
 					<div class="right_item" id="my_locked">---</div>
 					<div class="left_item">CLAIMABLE:</div>
 					<div class="right_item" id="my_claimable">---</div>
 				</div>
-				<div id="migration_box">
-					<div id="stbz_action_button" style="display: none;">
-						<input type="text" id="stbz_migrate_amount" autocomplete="off" class="input_box" value="0" placeholder="Enter STBZ Amount">
-						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxSTBZ();">MAX IN</button>
-						<br><button class="dark_button" id="lock_button" style="min-width: 0px; max-width: 95%; margin: 2px; padding-left: 40px; padding-right: 40px;" onclick="lockSTBZ();">LOCK STBZ &gt;</button>
-					</div>
-					<div id="stbz_unlock_button" class="unlock_wrap_div" style="padding-top: 10px;">
-						<button class="dark_button" id="stbz_unlock_inner_button" onclick="unlockSTBZ();" style="min-width: 200px;">APPROVE STBZ &gt;</button>
-					</div>
+				<div id="airdrop_action_div" style="padding-top: 10px; display: none;">
+					<button class="dark_button" id="airdrop_action" onclick="getArbSTBZAirdrop();" style="min-width: 200px;">CLAIM STBZ &gt;</button>
 				</div>
 			</div><br><br>
 		</div>
