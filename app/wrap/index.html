@@ -71,7 +71,7 @@
 <div class="container marketing">
 	<div class="row featurette" id="loading_panel">
 		<div class="col-md-12" style="margin-top: 200px; text-align: center; margin-bottom: 150px;">
-			<span style="color: rgb(40,40,40); font-size: 20px;">Connect to wallet to view the wraps</span><br><br>
+			<span style="color: rgb(40,40,40); font-size: 20px;" id="connection_text">Connect to wallet to view the wraps</span><br><br>
 		</div>
 	</div>
 	<div class="row featurette" id="data_panel" style="display: none; margin-top: 20px;">
@@ -83,420 +83,42 @@
 				zs-TOKENS INCREASE IN VALUE AS STRATEGIES BUY MORE OF THE UNDERLYING ASSET
 			</div>
 
-			<span style="font-size: 12px; color: black;">There are no withdrawal fees to unwrap zs-Tokens <strong>except for zs-AMPL.</strong><br>All deposited tokens are considered of <strong>equal value</strong> so it is recommended to deposit the least valued token.<br>APYs are based on historic return since one week ago.</span><br><br>
+			<span style="font-size: 12px; color: black;">There are no withdrawal fees to unwrap zs-Tokens<br>All deposited tokens are considered of <strong>equal value</strong> so it is recommended to deposit the least valued token.<br>APYs are based on historic return since last checkpoint.</span><br><br>
 
 			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/all_stables_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>MULTI-COIN WRAPPER</strong></span><br>
-				<select id="panel_6_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
-					<option value="0" selected>DAI DEPOSIT</option>
-					<option value="1">USDC DEPOSIT</option>
-					<option value="2">USDT DEPOSIT</option>
-					<option value="3">sUSD DEPOSIT</option>
-				</select>
-				<br>
-				<span style="font-size: 14px;">WRAP DAI, USDC, USDT, sUSD INTO zs-USD TO EARN INTEREST</span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">APY (WEEKLY):</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_6_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_6_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_6_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_6_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_6_withdrawtoken">---</div>
-				</div>
-				<div id="panel_6_action_buttons" style="display: none;">
-					<input type="text" id="panel_6_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px" onclick="selectMaxUnwrap(6);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(6);" id="panel_6_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_6_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_6_unlock_inner_button" onclick="unlockWrapper(6);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/btc_synths_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>BTC SYNTHS WRAPPER</strong></span><br>
-				<select id="panel_20_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
-					<option value="0" selected>tBTC DEPOSIT</option>
-					<option value="1">sBTC DEPOSIT</option>
-				</select>
-				<br>
-				<span style="font-size: 14px;">WRAP tBTC, sBTC INTO zs-tsBTC TO EARN INTEREST</span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">APY (WEEKLY):</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_20_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_20_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_20_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_20_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_20_withdrawtoken">---</div>
-				</div>
-				<div id="panel_20_action_buttons" style="display: none;">
-					<input type="text" id="panel_20_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(20);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(20);" id="panel_20_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_20_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_20_unlock_inner_button" onclick="unlockWrapper(20);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/eth_proxies_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>ETH PROXY WRAPPER</strong></span><br>
-				<select id="panel_16_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
-					<option value="0" selected>WETH DEPOSIT</option>
-					<option value="1">ANKRETH DEPOSIT</option>
-					<option value="2">STETH DEPOSIT</option>
-				</select>
-				<br>
-				<span style="font-size: 14px;">WRAP WETH, ANKRETH, STETH INTO zs-ETH TO EARN INTEREST</span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">APY (WEEKLY):</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_16_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_16_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_16_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_16_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_16_withdrawtoken">---</div>
-				</div>
-				<div id="panel_16_action_buttons" style="display: none;">
-					<input type="text" id="panel_16_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(16);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(16);" id="panel_16_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_16_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_16_unlock_inner_button" onclick="unlockWrapper(16);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/ust_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>UST WRAPPER</strong></span><br>
-				<a href="../swaps/" target="_blank"><button class="light_button">GET UST &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP UST INTO zs-UST (UST/USDT) TO EARN INTEREST<br></span>
-				<div class="info_window">
-					<div class="left_item">APY (WEEKLY):</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_15_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_15_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_15_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_15_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_15_withdrawtoken">---</div>
-				</div>
-				<div id="panel_15_action_buttons" style="display: none;">
-					<input type="text" id="panel_15_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(15);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(15);" id="panel_15_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_15_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_15_unlock_inner_button" onclick="unlockWrapper(15);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/emerging_stablesv2_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 14px; vertical-align: top;"><strong>EMER-COIN V2 WRAPPER</strong></span><br>
-				<select id="panel_18_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
-					<option value="0" selected>USDN DEPOSIT</option>
-					<option value="1">MUSD DEPOSIT</option>
-					<option value="2">DUSD DEPOSIT</option>
-					<option value="3">USDP DEPOSIT</option>
-					<option value="4">ALUSD DEPOSIT</option>
-					<option value="5">LUSD DEPOSIT</option>
-					<option value="6">BUSD DEPOSIT</option>
-				</select>
-				<br>
-				<span style="font-size: 14px;">WRAP USDN, MUSD, DUSD, USD AND OTHERS INTO zs-XUSD2 TO EARN INTEREST</span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">APY (WEEKLY):</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_18_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_18_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_18_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_18_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_18_withdrawtoken">---</div>
-				</div>
-				<div id="panel_18_action_buttons" style="display: none;">
-					<input type="text" id="panel_18_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(18);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(18);" id="panel_18_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_18_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_18_unlock_inner_button" onclick="unlockWrapper(18);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/ampl_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>AMPL WRAPPER</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0xD46bA6D942050d489DBd938a2C909A5d5039A161" target="_blank"><button class="light_button">GET AMPL &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP AMPL INTO zs-AMPL (AMPL/USDC) TO EARN INTEREST<br></span>
-				<div class="info_window">
-					<div class="left_item">APY (WEEKLY):</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_21_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_21_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_21_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_21_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_21_withdrawtoken">---</div>
-					<div class="left_item">WITHDRAW FEE:</div>
-					<div class="right_item" id="panel_21_fee">0%</div>
-				</div>
-				<div id="panel_21_action_buttons" style="display: none;">
-					<input type="text" id="panel_21_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(21);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(21);" id="panel_21_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_21_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_21_unlock_inner_button" onclick="unlockWrapper(21);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/fei_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>FEI WRAPPER</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0x956F47F50A910163D8BF957Cf5846D573E7f87CA" target="_blank"><button class="light_button">GET FEI &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP FEI INTO zs-FEI (FEI/USDC) TO EARN INTEREST<br></span>
-				<div class="info_window">
-					<div class="left_item">APY (WEEKLY):</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_19_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_19_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_19_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_19_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_19_withdrawtoken">---</div>
-				</div>
-				<div id="panel_19_action_buttons" style="display: none;">
-					<input type="text" id="panel_19_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(19);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(19);" id="panel_19_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_19_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_19_unlock_inner_button" onclick="unlockWrapper(19);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/frax_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>FRAX (INACTIVE)</strong></span><br>
-				<a href="../swaps/" target="_blank"><button class="light_button">GET FRAX &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP FRAX INTO zs-FRAX (FRAX/USDC) TO EARN INTEREST</span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">APY (WEEKLY):</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_14_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_14_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_14_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_14_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_14_withdrawtoken">---</div>
-				</div>
-				<div id="panel_14_action_buttons" style="display: none;">
-					<input type="text" id="panel_14_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(14);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(14);" id="panel_14_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_14_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_14_unlock_inner_button" onclick="unlockWrapper(14);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/ed_seigniorages_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>SEIGNIORAGE (INACTIVE)</strong></span><br>
-				<select id="panel_12_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
-					<option value="0" selected>ESD DEPOSIT</option>
-					<option value="1">DSD DEPOSIT</option>
-				</select>
-				<br>
-				<span style="font-size: 14px;">WRAP ESD, DSD INTO zs-SGR TO EARN INTEREST</span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">APY (WEEKLY):</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_12_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_12_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_12_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_12_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_12_withdrawtoken">---</div>
-				</div>
-				<div id="panel_12_action_buttons" style="display: none;">
-					<input type="text" id="panel_12_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(12);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(12);" id="panel_12_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_12_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_12_unlock_inner_button" onclick="unlockWrapper(12);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div style="width: 60%; margin-left: auto; margin-right: auto; margin-bottom: 5px; margin-top: 5px; font-size: 30px;">&middot; &middot; &middot; &middot; &middot;</div>
-
-			<div class="explainer_div">
-				zpa-TOKENS ARE NOW DEPRECATED. PLEASE WRAP TOKENS INTO STRATEGIES ABOVE INSTEAD.<br>
-			</div>
-
-			<div class="info_div" style="min-height: 390px;">
-				<img src="../../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>USDC WRAPPER</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48" target="_blank"><button class="light_button">GET USDC &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP USDC INTO zpa-USDC</span>
-				<br>
+				<img src="../../images/mim_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>MIM WRAPPER</strong></span><br>
+				<a href="https://abracadabra.money/" target="_blank"><button class="light_button">GET MIM &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP MIM INTO zs-MIM (MIM/USDC/USDT) TO EARN INTEREST<br></span>
 				<div class="info_window">
 					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_7_apy">---</div>
+					<div class="right_item" style="color: rgb(40,200,40);" id="panel_0_apy">---</div>
 					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_7_walletbalance">---</div>
+					<div class="right_item" id="panel_0_walletbalance">---</div>
 					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_7_price">---</div>
+					<div class="right_item" id="panel_0_price">---</div>
 					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_7_value">---</div>
-					<div class="left_item">WITHDRAW FEE:</div>
-					<div class="right_item" id="panel_7_fee">---</div>
+					<div class="right_item" id="panel_0_value">---</div>
+					<div class="left_item">WITHDRAW TOKEN:</div>
+					<div class="right_item" id="panel_0_withdrawtoken">---</div>
 				</div>
-				<div id="panel_7_action_buttons" style="display: none;">
-					<input type="text" id="panel_7_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(7);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(7);" id="panel_7_withdraw_button">UNWRAP &gt;</button>
+				<div id="panel_0_action_buttons" style="display: none;">
+					<input type="text" id="panel_0_amount" class="input_box" value="0" placeholder="Enter Amount">
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(0);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(0);">MAX UNWRAP</button>
+					<br>
+					<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(0);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(0);" id="panel_0_withdraw_button">UNWRAP &gt;</button>
 				</div>
-				<div id="panel_7_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_7_unlock_inner_button" onclick="unlockWrapper(7);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 390px;">
-				<img src="../../images/dai_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>DAI WRAPPER</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0x6b175474e89094c44da98b954eedeac495271d0f" target="_blank"><button class="light_button">GET DAI &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP DAI INTO zpa-DAI</span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">APY :</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_8_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_8_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_8_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_8_value">---</div>
-					<div class="left_item">WITHDRAW FEE:</div>
-					<div class="right_item" id="panel_8_fee">---</div>
-				</div>
-				<div id="panel_8_action_buttons" style="display: none;">
-					<input type="text" id="panel_8_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(8);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(8);" id="panel_8_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_8_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_8_unlock_inner_button" onclick="unlockWrapper(8);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+				<div id="panel_0_unlock_button" class="unlock_wrap_div">
+					<button class="dark_button" id="panel_0_unlock_inner_button" onclick="unlockWrapper(0);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
 				</div>
 			</div>
 
-			<div class="info_div" style="min-height: 390px;">
-				<img src="../../images/usdt_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>USDT WRAPPER</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0xdac17f958d2ee523a2206206994597c13d831ec7" target="_blank"><button class="light_button">GET USDT &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP USDT INTO zpa-USDT</span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_9_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_9_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_9_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_9_value">---</div>
-					<div class="left_item">WITHDRAW FEE:</div>
-					<div class="right_item" id="panel_9_fee">---</div>
-				</div>
-				<div id="panel_9_action_buttons" style="display: none;">
-					<input type="text" id="panel_9_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(9);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(9);" id="panel_9_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_9_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_9_unlock_inner_button" onclick="unlockWrapper(9);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 390px;">
-				<img src="../../images/susd_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>sUSD WRAPPER</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0x57ab1ec28d129707052df4df418d58a2d46d5f51" target="_blank"><button class="light_button">GET sUSD &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP sUSD INTO zpa-sUSD</span>
-				<br>
-				<div class="info_window">
-					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_10_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_10_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_10_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_10_value">---</div>
-					<div class="left_item">WITHDRAW FEE:</div>
-					<div class="right_item" id="panel_10_fee">---</div>
-				</div>
-				<div id="panel_10_action_buttons" style="display: none;">
-					<input type="text" id="panel_10_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(10);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(10);" id="panel_10_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_10_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_10_unlock_inner_button" onclick="unlockWrapper(10);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<br><br><br>
-			<span style="font-size: 12px; color: black;">Withdrawal fees apply to unwrap zpa-Tokens. The fee is based on the price of the underlying stablecoin. The maximum fee is <strong>0.1%</strong>, the minimum fee is <strong>0.04%</strong>. The lower the price, the higher the fee. All withdrawal fees go to the Stabilize gas treasury and staking pool as WETH.</span>
-
-			<div style="width: 60%; margin-left: auto; margin-right: auto; margin-bottom: 5px; margin-top: 20px; font-size: 30px;">&middot; &middot; &middot; &middot; &middot;</div>
-
-			<div class="explainer_div">
-				za-TOKENS ARE DEPRECATED
-			</div>
-
-			<div class="info_div" style="min-height: 390px;">
-				<img src="../../images/dai_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>DAI WRAPPER</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0x6b175474e89094c44da98b954eedeac495271d0f" target="_blank"><button class="light_button">GET DAI &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP DAI INTO za-DAI</span>
-				<br>
+			<div class="info_div" style="min-height: 420px;">
+				<img src="../../images/crv_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>2CRV WRAPPER</strong></span><br>
+				<a href="https://arbitrum.curve.fi/2pool/deposit/" target="_blank"><button class="light_button">GET 2CRV &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP 2CRV INTO zs-2CRV TO EARN INTEREST<br></span>
 				<div class="info_window">
 					<div class="left_item">APY:</div>
 					<div class="right_item" style="color: rgb(40,200,40);" id="panel_1_apy">---</div>
@@ -506,23 +128,26 @@
 					<div class="right_item" id="panel_1_price">---</div>
 					<div class="left_item">VALUE:</div>
 					<div class="right_item" id="panel_1_value">---</div>
+					<div class="left_item">WITHDRAW TOKEN:</div>
+					<div class="right_item" id="panel_1_withdrawtoken">---</div>
 				</div>
 				<div id="panel_1_action_buttons" style="display: none;">
 					<input type="text" id="panel_1_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(1);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(1);" id="panel_1_withdraw_button">UNWRAP &gt;</button>
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(1);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(1);">MAX UNWRAP</button>
+					<br>
+					<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(1);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(1);" id="panel_1_withdraw_button">UNWRAP &gt;</button>
 				</div>
 				<div id="panel_1_unlock_button" class="unlock_wrap_div">
 					<button class="dark_button" id="panel_1_unlock_inner_button" onclick="unlockWrapper(1);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
 				</div>
 			</div>
 
-			<div class="info_div" style="min-height: 390px;">
-				<img src="../../images/usdt_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>USDT WRAPPER</strong></span><br>
-				<a href="https://uniswap.exchange/swap/0xdac17f958d2ee523a2206206994597c13d831ec7" target="_blank"><button class="light_button">GET USDT &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP USDT INTO za-USDT</span>
-				<br>
+			<div class="info_div" style="min-height: 420px;">
+				<img src="../../images/eth_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+				<span style="font-size: 16px; vertical-align: top;"><strong>WETH WRAPPER</strong></span><br>
+				<a href="https://arbiscan.io/address/0x82aF49447D8a07e3bd95BD0d56f35241523fBab1#writeProxyContract" target="_blank"><button class="light_button">GET WETH &gt;</button></a><br>
+				<span style="font-size: 14px;">WRAP WETH INTO zs-WETH TO EARN INTEREST<br></span>
 				<div class="info_window">
 					<div class="left_item">APY:</div>
 					<div class="right_item" style="color: rgb(40,200,40);" id="panel_2_apy">---</div>
@@ -532,20 +157,21 @@
 					<div class="right_item" id="panel_2_price">---</div>
 					<div class="left_item">VALUE:</div>
 					<div class="right_item" id="panel_2_value">---</div>
+					<div class="left_item">WITHDRAW TOKEN:</div>
+					<div class="right_item" id="panel_2_withdrawtoken">---</div>
 				</div>
 				<div id="panel_2_action_buttons" style="display: none;">
 					<input type="text" id="panel_2_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(2);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(2);" id="panel_2_withdraw_button">UNWRAP &gt;</button>
+					<br>
+					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(2);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(2);">MAX UNWRAP</button>
+					<br>
+					<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(2);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(2);" id="panel_2_withdraw_button">UNWRAP &gt;</button>
 				</div>
 				<div id="panel_2_unlock_button" class="unlock_wrap_div">
 					<button class="dark_button" id="panel_2_unlock_inner_button" onclick="unlockWrapper(2);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
 				</div>
 			</div>
-
-			<br><br><br>
-			<span style="font-size: 12px; color: black;">All za-Token pools are phased out, withdrawal fees are a flat <strong>0.1%</strong> to unwrap.<br>All withdrawal fees go to the Stabilize community treasury.</span>
-
+			
 		</div>	
 	</div>
 	<div class="row featurette">
