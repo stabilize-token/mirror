@@ -199,35 +199,6 @@
 			</div>
 
 			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/mim_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>MIM WRAPPER</strong></span><br>
-				<a href="https://abracadabra.money/" target="_blank"><button class="light_button">GET MIM &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP MIM INTO zs-MIM (MIM/USDC/USDT) TO EARN INTEREST<br></span>
-				<div class="info_window">
-					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_0_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_0_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_0_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_0_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_0_withdrawtoken">---</div>
-				</div>
-				<div id="panel_0_action_buttons" style="display: none;">
-					<input type="text" id="panel_0_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(0);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(0);">MAX UNWRAP</button>
-					<br>
-					<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(0);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(0);" id="panel_0_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_0_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_0_unlock_inner_button" onclick="unlockWrapper(0);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 420px;">
 				<img src="../../images/wbtc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
 				<span style="font-size: 16px; vertical-align: top;"><strong>wBTC WRAPPER</strong></span><br>
 				<a href="https://arbitrum.curve.fi/tricrypto" target="_blank"><button class="light_button">GET wBTC &gt;</button></a><br>
@@ -261,6 +232,35 @@
 
 			<div id="inactive_wraps_container" style="display: none; margin-bottom: 10px;">
 				<br><br>
+
+				<div class="info_div" style="min-height: 420px;">
+					<img src="../../images/mim_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+					<span style="font-size: 16px; vertical-align: top;"><strong>MIM WRAPPER (INACTIVE)</strong></span><br>
+					<a href="https://abracadabra.money/" target="_blank"><button class="light_button">GET MIM &gt;</button></a><br>
+					<span style="font-size: 14px;">WRAP MIM INTO zs-MIM (MIM/USDC/USDT) TO EARN INTEREST<br></span>
+					<div class="info_window">
+						<div class="left_item">APY:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_0_apy">---</div>
+						<div class="left_item">WALLET BALANCE:</div>
+						<div class="right_item" id="panel_0_walletbalance">---</div>
+						<div class="left_item">PRICE/TOKEN:</div>
+						<div class="right_item" id="panel_0_price">---</div>
+						<div class="left_item">VALUE:</div>
+						<div class="right_item" id="panel_0_value">---</div>
+						<div class="left_item">WITHDRAW TOKEN:</div>
+						<div class="right_item" id="panel_0_withdrawtoken">---</div>
+					</div>
+					<div id="panel_0_action_buttons" style="display: none;">
+						<input type="text" id="panel_0_amount" class="input_box" value="0" placeholder="Enter Amount">
+						<br>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(0);">MAX UNWRAP</button>
+						<br>
+						<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(0);" id="panel_0_withdraw_button">UNWRAP &gt;</button>
+					</div>
+					<div id="panel_0_unlock_button" class="unlock_wrap_div">
+						<button class="dark_button" id="panel_0_unlock_inner_button" onclick="unlockWrapper(0);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+					</div>
+				</div>
 
 				<div class="info_div" style="min-height: 420px;">
 					<img src="../../images/eth_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
