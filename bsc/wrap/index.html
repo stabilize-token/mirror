@@ -184,54 +184,6 @@
 					<button class="dark_button" id="panel_12_unlock_stake_inner_button" onclick="unlockStakeWrapper(12);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 				</div>
 			</div>
-			
-			<div class="info_div" style="min-height: 585px;">
-				<img src="../../images/static_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>STATIC WRAPPER</strong></span><br>
-				<a href="https://pancakeswap.finance/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x7dEb9906BD1d77B410a56E5C23c36340Bd60C983" target="_blank"><button class="light_button">GET STATIC &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP STATIC INTO zsb-STATIC (STATIC/BUSD) TO EARN INTEREST<br></span>
-				<div class="info_window">
-					<div class="left_item">STRAT APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_11_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_11_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_11_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_11_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_11_withdrawtoken">---</div>
-					<div class="left_item">STAKE APR:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_11_stbb_apr">---</div>
-					<div class="left_item">STAKE APY*:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_11_stbb_apy">---</div>
-					<div class="left_item">TOTAL STBB:</div>
-					<div class="right_item" id="panel_11_stbb_total">---</div>
-					<div class="left_item">STBB BALANCE:</div>
-					<div class="right_item" id="panel_11_stbb_balance">---</div>
-					<div class="left_item">WBNB EARNED:</div>
-					<div class="right_item" id="panel_11_wbnb_balance">---</div>
-				</div>
-				<div id="panel_11_action_buttons" style="display: none;">
-					<input type="text" id="panel_11_amount" class="input_box" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(11);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(11);" id="panel_11_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_11_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_11_unlock_inner_button" onclick="unlockWrapper(11);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-				<div id="panel_11_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-				<div id="panel_11_stake_buttons" style="display: none; margin-top: 5px;">
-					<input type="text" id="panel_11_stake_amount" class="input_box" placeholder="Enter STBB Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxStakeOut(11);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(11);" id="panel_11_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(11);" id="panel_11_claim_stake_button">CLAIM WBNB &gt;</button>
-				</div>
-				<div id="panel_11_unlock_stake_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_11_unlock_stake_inner_button" onclick="unlockStakeWrapper(11);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
-				</div>
-			</div><br>
 
 			<br><br>
 			<span style="font-size: 12px; color: black;">* Yearly yield if manually compounded every week.</span>
@@ -241,6 +193,54 @@
 
 			<div id="inactive_wraps_container" style="display: none; margin-bottom: 10px;">
 				<br><br>
+
+				<div class="info_div" style="min-height: 585px;">
+					<img src="../../images/static_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+					<span style="font-size: 16px; vertical-align: top;"><strong>STATIC WRAPPER (INACTIVE)</strong></span><br>
+					<a href="https://pancakeswap.finance/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0x7dEb9906BD1d77B410a56E5C23c36340Bd60C983" target="_blank"><button class="light_button">GET STATIC &gt;</button></a><br>
+					<span style="font-size: 14px;">WRAP STATIC INTO zsb-STATIC (STATIC/BUSD) TO EARN INTEREST<br></span>
+					<div class="info_window">
+						<div class="left_item">STRAT APY:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_11_apy">---</div>
+						<div class="left_item">WALLET BALANCE:</div>
+						<div class="right_item" id="panel_11_walletbalance">---</div>
+						<div class="left_item">PRICE/TOKEN:</div>
+						<div class="right_item" id="panel_11_price">---</div>
+						<div class="left_item">VALUE:</div>
+						<div class="right_item" id="panel_11_value">---</div>
+						<div class="left_item">WITHDRAW TOKEN:</div>
+						<div class="right_item" id="panel_11_withdrawtoken">---</div>
+						<div class="left_item">STAKE APR:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_11_stbb_apr">---</div>
+						<div class="left_item">STAKE APY*:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_11_stbb_apy">---</div>
+						<div class="left_item">TOTAL STBB:</div>
+						<div class="right_item" id="panel_11_stbb_total">---</div>
+						<div class="left_item">STBB BALANCE:</div>
+						<div class="right_item" id="panel_11_stbb_balance">---</div>
+						<div class="left_item">WBNB EARNED:</div>
+						<div class="right_item" id="panel_11_wbnb_balance">---</div>
+					</div>
+					<div id="panel_11_action_buttons" style="display: none;">
+						<input type="text" id="panel_11_amount" class="input_box" placeholder="Enter Amount">
+						<br>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(11);">MAX UNWRAP</button>
+						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(11);" id="panel_11_withdraw_button">UNWRAP &gt;</button>
+					</div>
+					<div id="panel_11_unlock_button" class="unlock_wrap_div">
+						<button class="dark_button" id="panel_11_unlock_inner_button" onclick="unlockWrapper(11);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
+					</div>
+					<div id="panel_11_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_11_stake_buttons" style="display: none; margin-top: 5px;">
+						<input type="text" id="panel_11_stake_amount" class="input_box" placeholder="Enter STBB Amount">
+						<br>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxStakeOut(11);">MAX OUT</button>
+						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(11);" id="panel_11_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(11);" id="panel_11_claim_stake_button">CLAIM WBNB &gt;</button>
+					</div>
+					<div id="panel_11_unlock_stake_button" class="unlock_wrap_div">
+						<button class="dark_button" id="panel_11_unlock_stake_inner_button" onclick="unlockStakeWrapper(11);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
+					</div>
+				</div>
 
 				<div class="info_div" style="min-height: 585px;">
 					<img src="../../images/bsc_eth_proxies_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
