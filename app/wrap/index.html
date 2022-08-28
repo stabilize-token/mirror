@@ -169,40 +169,40 @@
 				</div>
 			</div>
 
-			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/crv_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>2CRV WRAPPER</strong></span><br>
-				<a href="https://arbitrum.curve.fi/2pool/deposit/" target="_blank"><button class="light_button">GET 2CRV &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP 2CRV INTO zs-2CRV TO EARN INTEREST<br></span>
-				<div class="info_window">
-					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_1_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_1_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_1_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_1_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_1_withdrawtoken">---</div>
-				</div>
-				<div id="panel_1_action_buttons" style="display: none;">
-					<input type="text" id="panel_1_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(1);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(1);">MAX UNWRAP</button>
-					<br>
-					<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(1);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(1);" id="panel_1_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_1_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_1_unlock_inner_button" onclick="unlockWrapper(1);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
 			<div style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-bottom: 20px; margin-top: 20px;"> </div>
 			<span style="color: rgb(40,40,40); font-size: 14px;" id="inactive_wraps_controller"><span id="inactive_wraps_active" onclick="showInactiveWraps();"><big>INACTIVE WRAPS &gt;</big></span></span>
 
 			<div id="inactive_wraps_container" style="display: none; margin-bottom: 10px;">
 				<br><br>
+
+				<div class="info_div" style="min-height: 420px;">
+					<img src="../../images/crv_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+					<span style="font-size: 16px; vertical-align: top;"><strong>2CRV WRAPPER (INACTIVE)</strong></span><br>
+					<a href="https://arbitrum.curve.fi/2pool/deposit/" target="_blank"><button class="light_button">GET 2CRV &gt;</button></a><br>
+					<span style="font-size: 14px;">WRAP 2CRV INTO zs-2CRV TO EARN INTEREST<br></span>
+					<div class="info_window">
+						<div class="left_item">APY:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_1_apy">---</div>
+						<div class="left_item">WALLET BALANCE:</div>
+						<div class="right_item" id="panel_1_walletbalance">---</div>
+						<div class="left_item">PRICE/TOKEN:</div>
+						<div class="right_item" id="panel_1_price">---</div>
+						<div class="left_item">VALUE:</div>
+						<div class="right_item" id="panel_1_value">---</div>
+						<div class="left_item">WITHDRAW TOKEN:</div>
+						<div class="right_item" id="panel_1_withdrawtoken">---</div>
+					</div>
+					<div id="panel_1_action_buttons" style="display: none;">
+						<input type="text" id="panel_1_amount" class="input_box" value="0" placeholder="Enter Amount">
+						<br>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(1);">MAX UNWRAP</button>
+						<br>
+						<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(1);" id="panel_1_withdraw_button">UNWRAP &gt;</button>
+					</div>
+					<div id="panel_1_unlock_button" class="unlock_wrap_div">
+						<button class="dark_button" id="panel_1_unlock_inner_button" onclick="unlockWrapper(1);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+					</div>
+				</div>
 
 				<div class="info_div" style="min-height: 420px;">
 					<img src="../../images/wbtc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
