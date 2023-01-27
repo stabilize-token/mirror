@@ -77,35 +77,6 @@
 			<span style="font-size: 12px; color: black;">There are no withdrawal fees to unwrap zs-Tokens<br>All deposited tokens are considered of <strong>equal value</strong> so it is recommended to deposit the least valued token.<br>APYs are based on historic return since last checkpoint.</span><br><br>
 
 			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>USDC WRAPPER</strong></span><br>
-				<a href="https://app.sushi.com/swap?outputCurrency=0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8" target="_blank"><button class="light_button">GET USDC &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP USDC INTO zs-imUSDC TO EARN INTEREST<br></span>
-				<div class="info_window">
-					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_5_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_5_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_5_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_5_withdrawtoken">---</div>
-				</div>
-				<div id="panel_5_action_buttons" style="display: none;">
-					<input type="text" id="panel_5_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(5);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(5);">MAX UNWRAP</button>
-					<br>
-					<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(5);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(5);" id="panel_5_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_5_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_5_unlock_inner_button" onclick="unlockWrapper(5);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 420px;">
 				<img src="../../images/gmx_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
 				<span style="font-size: 16px; vertical-align: top;"><strong>GLP WRAPPER</strong></span><br>
 				<a href="https://gmx.io/buy_glp" target="_blank"><button class="light_button">GET GLP &gt;</button></a><br>
@@ -134,40 +105,69 @@
 				</div>
 			</div>
 
-			<div class="info_div" style="min-height: 420px;">
-				<img src="../../images/eth_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>WETH WRAPPER</strong></span><br>
-				<a href="https://app.sushi.com/swap?outputCurrency=0x82aF49447D8a07e3bd95BD0d56f35241523fBab1" target="_blank"><button class="light_button">GET WETH &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP WETH INTO zs-imWETH TO EARN INTEREST<br></span>
-				<div class="info_window">
-					<div class="left_item">APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_6_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_6_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_6_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_6_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_6_withdrawtoken">---</div>
-				</div>
-				<div id="panel_6_action_buttons" style="display: none;">
-					<input type="text" id="panel_6_amount" class="input_box" value="0" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(6);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(6);">MAX UNWRAP</button>
-					<br>
-					<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(6);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(6);" id="panel_6_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_6_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_6_unlock_inner_button" onclick="unlockWrapper(6);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-			</div>
-
 			<div style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-bottom: 20px; margin-top: 20px;"> </div>
 			<span style="color: rgb(40,40,40); font-size: 14px;" id="inactive_wraps_controller"><span id="inactive_wraps_active" onclick="showInactiveWraps();"><big>INACTIVE WRAPS &gt;</big></span></span>
 
 			<div id="inactive_wraps_container" style="display: none; margin-bottom: 10px;">
 				<br><br>
+
+				<div class="info_div" style="min-height: 420px;">
+					<img src="../../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+					<span style="font-size: 16px; vertical-align: top;"><strong>USDC WRAPPER (INACTIVE)</strong></span><br>
+					<a href="https://app.sushi.com/swap?outputCurrency=0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8" target="_blank"><button class="light_button">GET USDC &gt;</button></a><br>
+					<span style="font-size: 14px;">WRAP USDC INTO zs-imUSDC TO EARN INTEREST<br></span>
+					<div class="info_window">
+						<div class="left_item">APY:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_5_apy">---</div>
+						<div class="left_item">WALLET BALANCE:</div>
+						<div class="right_item" id="panel_5_walletbalance">---</div>
+						<div class="left_item">PRICE/TOKEN:</div>
+						<div class="right_item" id="panel_5_price">---</div>
+						<div class="left_item">VALUE:</div>
+						<div class="right_item" id="panel_5_value">---</div>
+						<div class="left_item">WITHDRAW TOKEN:</div>
+						<div class="right_item" id="panel_5_withdrawtoken">---</div>
+					</div>
+					<div id="panel_5_action_buttons" style="display: none;">
+						<input type="text" id="panel_5_amount" class="input_box" value="0" placeholder="Enter Amount">
+						<br>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(5);">MAX UNWRAP</button>
+						<br>
+						<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(5);" id="panel_5_withdraw_button">UNWRAP LOCKED</button>
+					</div>
+					<div id="panel_5_unlock_button" class="unlock_wrap_div">
+						<button class="dark_button" id="panel_5_unlock_inner_button" onclick="unlockWrapper(5);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+					</div>
+				</div>
+
+				<div class="info_div" style="min-height: 420px;">
+					<img src="../../images/eth_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+					<span style="font-size: 16px; vertical-align: top;"><strong>WETH WRAPPER (INACTIVE)</strong></span><br>
+					<a href="https://app.sushi.com/swap?outputCurrency=0x82aF49447D8a07e3bd95BD0d56f35241523fBab1" target="_blank"><button class="light_button">GET WETH &gt;</button></a><br>
+					<span style="font-size: 14px;">WRAP WETH INTO zs-imWETH TO EARN INTEREST<br></span>
+					<div class="info_window">
+						<div class="left_item">APY:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_6_apy">---</div>
+						<div class="left_item">WALLET BALANCE:</div>
+						<div class="right_item" id="panel_6_walletbalance">---</div>
+						<div class="left_item">PRICE/TOKEN:</div>
+						<div class="right_item" id="panel_6_price">---</div>
+						<div class="left_item">VALUE:</div>
+						<div class="right_item" id="panel_6_value">---</div>
+						<div class="left_item">WITHDRAW TOKEN:</div>
+						<div class="right_item" id="panel_6_withdrawtoken">---</div>
+					</div>
+					<div id="panel_6_action_buttons" style="display: none;">
+						<input type="text" id="panel_6_amount" class="input_box" value="0" placeholder="Enter Amount">
+						<br>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(6);">MAX UNWRAP</button>
+						<br>
+						<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(6);" id="panel_6_withdraw_button">UNWRAP LOCKED</button>
+					</div>
+					<div id="panel_6_unlock_button" class="unlock_wrap_div">
+						<button class="dark_button" id="panel_6_unlock_inner_button" onclick="unlockWrapper(6);" style="min-width: 200px;">UNLOCK WRAPPER &gt;</button>
+					</div>
+				</div>
 
 				<div class="info_div" style="min-height: 420px;">
 					<img src="../../images/crv_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
