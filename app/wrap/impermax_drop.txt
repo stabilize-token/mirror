@@ -1,0 +1,19 @@
+Impermax Vault Balances
+
+zs-imUSDC
+Total supply: 40685.282517 im-USDC
+
+Addresses holding:
+(Stabilize Contract) 0xce820d0e671d30f4ac0a5007346c0e85fe12039f - 30,564.73236155459999797
+0xa2a01b4a68575280a2de45178e289da717bedb6f - 10101.004811598075360769 (0.24827171 ratio of total)
+0x55c5d95237d4cb2950b1a8bddf5fa57908bc7bcc - 19.545344556780909207 (0.00048040 ratio of total)
+
+Addresses in Stabilize Contract
+0x4c0eB2910BB401B3BA968587800bC5FC94243cdB - 209.535157015786994049 (0.00515015 ratio of total)
+0x170D5603fa2409aA870683d1D2456CfF34E64964 - 30355.197204538813003921 (0.74609774 ratio of total)
+
+zs-imWETH
+Total Supply: 5.998538 im-WETH
+Addresses holding:
+0xa2a01b4a68575280a2de45178e289da717bedb6f - 5.998538648342903823 (1 ratio of total)
+
