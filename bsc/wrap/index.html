@@ -110,24 +110,18 @@
 					<div class="left_item">WBNB EARNED:</div>
 					<div class="right_item" id="panel_0_wbnb_balance">---</div>
 				</div>
-				<div id="panel_0_action_buttons" style="display: none;">
-					<input type="text" id="panel_0_amount" class="input_box" placeholder="Enter Amount">
+				<div id="panel_0_action_buttons">
+					<input type="text" id="panel_0_amount" oninput="resetAllowanceTimer(0, false);" autocomplete="off" class="input_box" placeholder="Enter Amount">
 					<br>
 					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(0);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(0);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(0);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(0);" id="panel_0_withdraw_button">UNWRAP &gt;</button>
+					<br><button class="dark_button" id="panel_0_wrap_approve_button" disabled style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(0);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(0);" id="panel_0_withdraw_button">UNWRAP &gt;</button>
 				</div>
-				<div id="panel_0_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_0_unlock_inner_button" onclick="unlockWrapper(0);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-				<div id="panel_0_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-				<div id="panel_0_stake_buttons" style="display: none; margin-top: 5px;">
-					<input type="text" id="panel_0_stake_amount" class="input_box" placeholder="Enter STBB Amount">
+				<div id="panel_0_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+				<div id="panel_0_stake_buttons" style="margin-top: 5px;">
+					<input type="text" id="panel_0_stake_amount" oninput="resetAllowanceTimer(0, true);" autocomplete="off" class="input_box" placeholder="Enter STBB Amount">
 					<br>
 					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeIn(0);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxStakeOut(0);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="stake(0);">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(0);" id="panel_0_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(0);" id="panel_0_claim_stake_button">CLAIM WBNB &gt;</button>
-				</div>
-				<div id="panel_0_unlock_stake_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_0_unlock_stake_inner_button" onclick="unlockStakeWrapper(0);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
+					<br><button class="dark_button" id="panel_0_stake_approve_button" disabled style="min-width: 0px; width: 40%; margin: 2px;" onclick="stake(0);">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(0);" id="panel_0_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(0);" id="panel_0_claim_stake_button">CLAIM WBNB &gt;</button>
 				</div>
 			</div>
 
@@ -158,74 +152,19 @@
 					<div class="left_item">WBNB EARNED:</div>
 					<div class="right_item" id="panel_16_wbnb_balance">---</div>
 				</div>
-				<div id="panel_16_action_buttons" style="display: none;">
-					<input type="text" id="panel_16_amount" class="input_box" placeholder="Enter Amount">
+				<div id="panel_16_action_buttons">
+					<input type="text" id="panel_16_amount" oninput="resetAllowanceTimer(16, false);" autocomplete="off" class="input_box" placeholder="Enter Amount">
 					<br>
 					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(16);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(16);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(16);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(16);" id="panel_16_withdraw_button">UNWRAP &gt;</button>
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" disabled onclick="wrap(16);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(16);" id="panel_16_withdraw_button">UNWRAP &gt;</button>
 				</div>
-				<div id="panel_16_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_16_unlock_inner_button" onclick="unlockWrapper(16);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-				<div id="panel_16_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-				<div id="panel_16_stake_buttons" style="display: none; margin-top: 5px;">
-					<input type="text" id="panel_16_stake_amount" class="input_box" placeholder="Enter STBB Amount">
+				<div id="panel_16_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+				<div id="panel_16_stake_buttons" style="margin-top: 5px;">
+					<input type="text" id="panel_16_stake_amount" oninput="resetAllowanceTimer(16, true);" autocomplete="off" class="input_box" placeholder="Enter STBB Amount">
 					<br>
 					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeIn(16);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(16);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="stake(16);">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(16);" id="panel_16_unstake_button">UNSTAKE &gt;</button> 
+					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" disabled onclick="stake(16);">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(16);" id="panel_16_unstake_button">UNSTAKE &gt;</button> 
 					<button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(16);" id="panel_16_claim_stake_button">CLAIM WBNB &gt;</button>
-				</div>
-				<div id="panel_16_unlock_stake_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_16_unlock_stake_inner_button" onclick="unlockStakeWrapper(16);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
-				</div>
-			</div>
-
-			<div class="info_div" style="min-height: 585px;">
-				<img src="../../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>USDC WRAPPER</strong></span><br>
-				<a href="https://pancakeswap.finance/swap?inputCurrency=BNB&outputCurrency=0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d" target="_blank"><button class="light_button">GET USDC &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP USDC INTO zsbh-USDC TO EARN INTEREST<br></span>
-				<div class="info_window">
-					<div class="left_item">STRAT APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_17_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_17_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_17_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_17_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_17_withdrawtoken">---</div>
-					<div class="left_item">STAKE APR:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_17_stbb_apr">---</div>
-					<div class="left_item">STAKE APY*:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_17_stbb_apy">---</div>
-					<div class="left_item">TOTAL STBB:</div>
-					<div class="right_item" id="panel_17_stbb_total">---</div>
-					<div class="left_item">STBB BALANCE:</div>
-					<div class="right_item" id="panel_17_stbb_balance">---</div>
-					<div class="left_item">WBNB EARNED:</div>
-					<div class="right_item" id="panel_17_wbnb_balance">---</div>
-				</div>
-				<div id="panel_17_action_buttons" style="display: none;">
-					<input type="text" id="panel_17_amount" class="input_box" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(17);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(17);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(17);" id="panel_17_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_17_unlock_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_17_unlock_inner_button" onclick="unlockWrapper(17);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-				</div>
-				<div id="panel_17_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-				<div id="panel_17_stake_buttons" style="display: none; margin-top: 5px;">
-					<input type="text" id="panel_17_stake_amount" class="input_box" placeholder="Enter STBB Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeIn(17);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(17);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="stake(17);">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(17);" id="panel_17_unstake_button">UNSTAKE &gt;</button> 
-					<button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(17);" id="panel_17_claim_stake_button">CLAIM WBNB &gt;</button>
-				</div>
-				<div id="panel_17_unlock_stake_button" class="unlock_wrap_div">
-					<button class="dark_button" id="panel_17_unlock_stake_inner_button" onclick="unlockStakeWrapper(17);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 				</div>
 			</div>
 
@@ -265,25 +204,19 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_13_wbnb_balance">---</div>
 					</div>
-					<div id="panel_13_action_buttons" style="display: none;">
+					<div id="panel_13_action_buttons">
 						<input type="text" id="panel_13_amount" class="input_box" placeholder="Enter Amount">
 						<br>
 						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(13);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(13);" id="panel_13_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_13_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_13_unlock_inner_button" onclick="unlockWrapper(13);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_13_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_13_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_13_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_13_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_13_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br>
 						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(13);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(13);" id="panel_13_unstake_button">UNSTAKE &gt;</button> 
 						<button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(13);" id="panel_13_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_13_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_13_unlock_stake_inner_button" onclick="unlockStakeWrapper(13);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 
@@ -314,127 +247,19 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_15_wbnb_balance">---</div>
 					</div>
-					<div id="panel_15_action_buttons" style="display: none;">
+					<div id="panel_15_action_buttons">
 						<input type="text" id="panel_15_amount" class="input_box" placeholder="Enter Amount">
 						<br>
 						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(15);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(15);" id="panel_15_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_15_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_15_unlock_inner_button" onclick="unlockWrapper(15);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_15_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_15_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_15_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_15_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_15_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br>
 						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(15);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(15);" id="panel_15_unstake_button">UNSTAKE &gt;</button> 
 						<button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(15);" id="panel_15_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_15_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_15_unlock_stake_inner_button" onclick="unlockStakeWrapper(15);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
-					</div>
-				</div>
-
-				<div class="info_div" style="min-height: 585px;">
-					<img src="../../images/usdd_lp_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-					<span style="font-size: 16px; vertical-align: top;"><strong>USDD/3EPS WRAPPER (INACTIVE)</strong></span><br>
-					<a href="https://ellipsis.finance/pool/0xC2cF01F785C587645440ccD488B188945C9505e7" target="_blank"><button class="light_button">GET USDD/3EPS &gt;</button></a><br>
-					<span style="font-size: 14px;">WRAP USDD/3EPS INTO zsb-USDDLP TO EARN INTEREST<br></span>
-					<div class="info_window">
-						<div class="left_item">STRAT APY:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_14_apy">---</div>
-						<div class="left_item">WALLET BALANCE:</div>
-						<div class="right_item" id="panel_14_walletbalance">---</div>
-						<div class="left_item">PRICE/TOKEN:</div>
-						<div class="right_item" id="panel_14_price">---</div>
-						<div class="left_item">VALUE:</div>
-						<div class="right_item" id="panel_14_value">---</div>
-						<div class="left_item">WITHDRAW TOKEN:</div>
-						<div class="right_item" id="panel_14_withdrawtoken">---</div>
-						<div class="left_item">STAKE APR:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_14_stbb_apr">---</div>
-						<div class="left_item">STAKE APY*:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_14_stbb_apy">---</div>
-						<div class="left_item">TOTAL STBB:</div>
-						<div class="right_item" id="panel_14_stbb_total">---</div>
-						<div class="left_item">STBB BALANCE:</div>
-						<div class="right_item" id="panel_14_stbb_balance">---</div>
-						<div class="left_item">WBNB EARNED:</div>
-						<div class="right_item" id="panel_14_wbnb_balance">---</div>
-					</div>
-					<div id="panel_14_action_buttons" style="display: none;">
-						<input type="text" id="panel_14_amount" class="input_box" placeholder="Enter Amount">
-						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(14);">MAX UNWRAP</button>
-						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(14);" id="panel_14_withdraw_button">UNWRAP &gt;</button>
-					</div>
-					<div id="panel_14_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_14_unlock_inner_button" onclick="unlockWrapper(14);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_14_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_14_stake_buttons" style="display: none; margin-top: 5px;">
-						<input type="text" id="panel_14_stake_amount" class="input_box" placeholder="Enter STBB Amount">
-						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(14);">MAX OUT</button>
-						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(14);" id="panel_14_unstake_button">UNSTAKE &gt;</button> 
-						<button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(14);" id="panel_14_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_14_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_14_unlock_stake_inner_button" onclick="unlockStakeWrapper(14);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
-					</div>
-				</div>
-
-				<div class="info_div" style="min-height: 585px;">
-					<img src="../../images/onedodo_usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-					<span style="font-size: 16px; vertical-align: top;"><strong>oneDODO WRAPPER (INACTIVE)</strong></span><br>
-					<select id="panel_12_deposit_account" class="light_button" autocomplete="off" onchange="updateMultiCoinPanel(this);">
-						<option value="0" selected>oneDODO DEPOSIT</option>
-						<option value="1">USDC DEPOSIT</option>
-					</select>
-					<br>
-					<span style="font-size: 14px;">WRAP oneDODO, USDC INTO zsb-oneDODO TO EARN INTEREST</span>
-					<br>
-					<div class="info_window">
-						<div class="left_item">STRAT APY:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_12_apy">---</div>
-						<div class="left_item">WALLET BALANCE:</div>
-						<div class="right_item" id="panel_12_walletbalance">---</div>
-						<div class="left_item">PRICE/TOKEN:</div>
-						<div class="right_item" id="panel_12_price">---</div>
-						<div class="left_item">VALUE:</div>
-						<div class="right_item" id="panel_12_value">---</div>
-						<div class="left_item">WITHDRAW TOKEN:</div>
-						<div class="right_item" id="panel_12_withdrawtoken">---</div>
-						<div class="left_item">STAKE APR:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_12_stbb_apr">---</div>
-						<div class="left_item">STAKE APY*:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_12_stbb_apy">---</div>
-						<div class="left_item">TOTAL STBB:</div>
-						<div class="right_item" id="panel_12_stbb_total">---</div>
-						<div class="left_item">STBB BALANCE:</div>
-						<div class="right_item" id="panel_12_stbb_balance">---</div>
-						<div class="left_item">WBNB EARNED:</div>
-						<div class="right_item" id="panel_12_wbnb_balance">---</div>
-					</div>
-					<div id="panel_12_action_buttons" style="display: none;">
-						<input type="text" id="panel_12_amount" class="input_box" placeholder="Enter Amount">
-						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(12);">MAX UNWRAP</button>
-						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(12);" id="panel_12_withdraw_button">UNWRAP &gt;</button>
-					</div>
-					<div id="panel_12_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_12_unlock_inner_button" onclick="unlockWrapper(12);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_12_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_12_stake_buttons" style="display: none; margin-top: 5px;">
-						<input type="text" id="panel_12_stake_amount" class="input_box" placeholder="Enter STBB Amount">
-						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxStakeOut(12);">MAX OUT</button>
-						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(12);" id="panel_12_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(12);" id="panel_12_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_12_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_12_unlock_stake_inner_button" onclick="unlockStakeWrapper(12);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 
@@ -465,24 +290,18 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_11_wbnb_balance">---</div>
 					</div>
-					<div id="panel_11_action_buttons" style="display: none;">
+					<div id="panel_11_action_buttons">
 						<input type="text" id="panel_11_amount" class="input_box" placeholder="Enter Amount">
 						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(11);">MAX UNWRAP</button>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(11);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(11);" id="panel_11_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_11_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_11_unlock_inner_button" onclick="unlockWrapper(11);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_11_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_11_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_11_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_11_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_11_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxStakeOut(11);">MAX OUT</button>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(11);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(11);" id="panel_11_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(11);" id="panel_11_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_11_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_11_unlock_stake_inner_button" onclick="unlockStakeWrapper(11);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 
@@ -519,24 +338,18 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_3_wbnb_balance">---</div>
 					</div>
-					<div id="panel_3_action_buttons" style="display: none;">
+					<div id="panel_3_action_buttons">
 						<input type="text" id="panel_3_amount" class="input_box" placeholder="Enter Amount">
 						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(3);">MAX UNWRAP</button>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(3);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(3);" id="panel_3_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_3_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_3_unlock_inner_button" onclick="unlockWrapper(3);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_3_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_3_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_3_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_3_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_3_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxStakeOut(3);">MAX OUT</button>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(3);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(3);" id="panel_3_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(3);" id="panel_3_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_3_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_3_unlock_stake_inner_button" onclick="unlockStakeWrapper(3);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 
@@ -567,24 +380,18 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_6_wbnb_balance">---</div>
 					</div>
-					<div id="panel_6_action_buttons" style="display: none;">
+					<div id="panel_6_action_buttons">
 						<input type="text" id="panel_6_amount" class="input_box" placeholder="Enter Amount">
 						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(6);">MAX UNWRAP</button>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(6);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="wrap(6);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(6);" id="panel_6_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_6_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_6_unlock_inner_button" onclick="unlockWrapper(6);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_6_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_6_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_6_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_6_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_6_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxStakeOut(6);">MAX OUT</button>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(6);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(6);" id="panel_6_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(6);" id="panel_6_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_6_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_6_unlock_stake_inner_button" onclick="unlockStakeWrapper(6);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 
@@ -615,24 +422,18 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_8_wbnb_balance">---</div>
 					</div>
-					<div id="panel_8_action_buttons" style="display: none;">
+					<div id="panel_8_action_buttons">
 						<input type="text" id="panel_8_amount" class="input_box" placeholder="Enter Amount">
 						<br>
-						><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxUnwrap(8);">MAX UNWRAP</button>
+						><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(8);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(8);" id="panel_8_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_8_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_8_unlock_inner_button" onclick="unlockWrapper(8);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_8_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_8_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_8_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_8_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_8_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="selectMaxStakeOut(8);">MAX OUT</button>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(8);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(8);" id="panel_8_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(8);" id="panel_8_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_8_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_8_unlock_stake_inner_button" onclick="unlockStakeWrapper(8);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 	
@@ -663,22 +464,16 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_9_wbnb_balance">---</div>
 					</div>
-					<div id="panel_9_action_buttons" style="display: none;">
+					<div id="panel_9_action_buttons">
 						<input type="text" id="panel_9_amount" class="input_box" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(9);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(9);" id="panel_9_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_9_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_9_unlock_inner_button" onclick="unlockWrapper(9);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_9_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_9_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_9_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_9_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_9_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(9);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(9);" id="panel_9_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(9);" id="panel_9_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_9_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_9_unlock_stake_inner_button" onclick="unlockStakeWrapper(9);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 	
@@ -710,22 +505,16 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_10_wbnb_balance">---</div>
 					</div>
-					<div id="panel_10_action_buttons" style="display: none;">
+					<div id="panel_10_action_buttons">
 						<input type="text" id="panel_10_amount" class="input_box" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(10);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(10);" id="panel_10_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_10_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_10_unlock_inner_button" onclick="unlockWrapper(10);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_10_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_10_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_10_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_10_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_10_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(10);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(10);" id="panel_10_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(10);" id="panel_10_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_10_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_10_unlock_stake_inner_button" onclick="unlockStakeWrapper(10);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 	
@@ -762,22 +551,16 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_5_wbnb_balance">---</div>
 					</div>
-					<div id="panel_5_action_buttons" style="display: none;">
+					<div id="panel_5_action_buttons">
 						<input type="text" id="panel_5_amount" class="input_box" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(5);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(5);" id="panel_5_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_5_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_5_unlock_inner_button" onclick="unlockWrapper(5);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_5_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_5_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_5_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_5_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_5_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(5);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(5);" id="panel_5_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(5);" id="panel_5_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_5_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_5_unlock_stake_inner_button" onclick="unlockStakeWrapper(5);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 	
@@ -813,22 +596,16 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_7_wbnb_balance">---</div>
 					</div>
-					<div id="panel_7_action_buttons" style="display: none;">
+					<div id="panel_7_action_buttons">
 						<input type="text" id="panel_7_amount" class="input_box" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(7);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(7);" id="panel_7_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_7_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_7_unlock_inner_button" onclick="unlockWrapper(7);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_7_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_7_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_7_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_7_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_7_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(7);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(7);" id="panel_7_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(7);" id="panel_7_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_7_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_7_unlock_stake_inner_button" onclick="unlockStakeWrapper(7);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 	
@@ -860,22 +637,16 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_1_wbnb_balance">---</div>
 					</div>
-					<div id="panel_1_action_buttons" style="display: none;">
+					<div id="panel_1_action_buttons">
 						<input type="text" id="panel_1_amount" class="input_box" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(1);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(1);" id="panel_1_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_1_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_1_unlock_inner_button" onclick="unlockWrapper(1);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_1_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_1_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_1_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_1_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_1_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(1);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(1);" id="panel_1_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(1);" id="panel_1_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_1_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_1_unlock_stake_inner_button" onclick="unlockStakeWrapper(1);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 	
@@ -906,22 +677,16 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_4_wbnb_balance">---</div>
 					</div>
-					<div id="panel_4_action_buttons" style="display: none;">
+					<div id="panel_4_action_buttons">
 						<input type="text" id="panel_4_amount" class="input_box" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(4);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(4);" id="panel_4_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_4_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_4_unlock_inner_button" onclick="unlockWrapper(4);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_4_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_4_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_4_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_4_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_4_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(4);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(4);" id="panel_4_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(4);" id="panel_4_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_4_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_4_unlock_stake_inner_button" onclick="unlockStakeWrapper(4);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 	
@@ -952,22 +717,16 @@
 						<div class="left_item">WBNB EARNED:</div>
 						<div class="right_item" id="panel_2_wbnb_balance">---</div>
 					</div>
-					<div id="panel_2_action_buttons" style="display: none;">
+					<div id="panel_2_action_buttons">
 						<input type="text" id="panel_2_amount" class="input_box" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(2);">MAX UNWRAP</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(2);" id="panel_2_withdraw_button">UNWRAP &gt;</button>
 					</div>
-					<div id="panel_2_unlock_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_2_unlock_inner_button" onclick="unlockWrapper(2);" style="min-width: 200px; margin-bottom: 20px;">UNLOCK WRAPPER &gt;</button>
-					</div>
-					<div id="panel_2_border" class="stbb_border" style="height: 2px; display: none; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-					<div id="panel_2_stake_buttons" style="display: none; margin-top: 5px;">
+					<div id="panel_2_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_2_stake_buttons" style="margin-top: 5px;">
 						<input type="text" id="panel_2_stake_amount" class="input_box" placeholder="Enter STBB Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(2);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(2);" id="panel_2_unstake_button">UNSTAKE &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(2);" id="panel_2_claim_stake_button">CLAIM WBNB &gt;</button>
-					</div>
-					<div id="panel_2_unlock_stake_button" class="unlock_wrap_div">
-						<button class="dark_button" id="panel_2_unlock_stake_inner_button" onclick="unlockStakeWrapper(2);" style="min-width: 200px; margin-bottom: 20px; margin-top: 0px;">UNLOCK STBB STAKING &gt;</button>
 					</div>
 				</div>
 			</div>
