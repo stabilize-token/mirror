@@ -104,14 +104,11 @@
 					<div class="left_item">STBB EARNED:</div>
 					<div class="right_item" id="panel_7_rewardbalance">---</div>
 				</div>
-				<div id="panel_7_action_buttons" style="display: none;">
-					<input type="text" id="panel_7_amount" class="input_box" value="0" placeholder="Enter Amount">
+				<div id="panel_7_action_buttons">
+					<input type="text" id="panel_7_amount" class="input_box" value="0" placeholder="Enter Amount" oninput="resetAllowanceTimer(7);" autocomplete="off">
 					<br>
 					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(7);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(7);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(7);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(7);" id="panel_7_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(7);" id="panel_7_claim_button">CLAIM STBB &gt;</button>
-				</div>
-				<div id="panel_7_unlock_button" class="unlock_div">
-					<button class="dark_button" id="panel_7_unlock_inner_button" onclick="unlockToken(7);">UNLOCK LP TO ENTER &gt;</button>
+					<br><button class="dark_button" id="panel_7_deposit_approve_button" disabled style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(7);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(7);" id="panel_7_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(7);" id="panel_7_claim_button">CLAIM STBB &gt;</button>
 				</div>
 			</div>
 
@@ -135,14 +132,11 @@
 					<div class="left_item">STBB EARNED:</div>
 					<div class="right_item" id="panel_1_rewardbalance">---</div>
 				</div>
-				<div id="panel_1_action_buttons" style="display: none;">
-					<input type="text" id="panel_1_amount" class="input_box" value="0" placeholder="Enter Amount">
+				<div id="panel_1_action_buttons">
+					<input type="text" id="panel_1_amount" class="input_box" value="0" placeholder="Enter Amount" oninput="resetAllowanceTimer(1);" autocomplete="off">
 					<br>
 					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(1);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(1);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(1);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(1);" id="panel_1_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(1);" id="panel_1_claim_button">CLAIM STBB &gt;</button>
-				</div>
-				<div id="panel_1_unlock_button" class="unlock_div">
-					<button class="dark_button" id="panel_1_unlock_inner_button" onclick="unlockToken(1);">UNLOCK zsb-USD TO ENTER &gt;</button>
+					<br><button class="dark_button" id="panel_1_deposit_approve_button" disabled style="min-width: 0px; width: 40%; margin: 2px;" onclick="deposit(1);">DEPOSIT &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(1);" id="panel_1_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(1);" id="panel_1_claim_button">CLAIM STBB &gt;</button>
 				</div>
 			</div>
 
@@ -154,37 +148,6 @@
 
 			<div id="inactive_pool_container" style="display: none; margin-bottom: 10px;">
 				<br><br>
-
-				<div class="info_div">
-					<img src="../images/ausd_lp_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-					<span style="font-size: 16px; vertical-align: top;"><strong>zsb-AUSDLP POOL (INACTIVE)</strong></span><br>
-					<a href="wrap/"><button class="light_button">GET zsb-AUSDLP &gt;</button></a><br>
-					<div class="info_window">
-						<div class="left_item">DAILY ROI:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_15_dpy">---</div>
-						<div class="left_item">APR:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_15_apr">---</div>
-						<div class="left_item">APY*:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_15_apy">---</div>
-						<div class="left_item">POOL SIZE:</div>
-						<div class="right_item" id="panel_15_poolsize">---</div>
-						<div class="left_item">BALANCE:</div>
-						<div class="right_item" id="panel_15_mybalance">---</div>
-						<div class="left_item">VALUE:</div>
-						<div class="right_item" id="panel_15_value">---</div>
-						<div class="left_item">STBB EARNED:</div>
-						<div class="right_item" id="panel_15_rewardbalance">---</div>
-					</div>
-					<div id="panel_15_action_buttons" style="display: none;">
-						<input type="text" id="panel_15_amount" class="input_box" value="0" placeholder="Enter Amount">
-						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(15);">MAX OUT</button>
-						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(15);" id="panel_15_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(15);" id="panel_15_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_15_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_15_unlock_inner_button" onclick="unlockToken(15);">UNLOCK zsb-AUSDLP TO EXIT &gt;</button>
-					</div>
-				</div>
 
 				<div class="info_div">
 					<img src="../images/usdd_lp_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
@@ -206,106 +169,10 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_17_rewardbalance">---</div>
 					</div>
-					<div id="panel_17_action_buttons" style="display: none;">
+					<div id="panel_17_action_buttons">
 						<input type="text" id="panel_17_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(17);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(17);" id="panel_17_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(17);" id="panel_17_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_17_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_17_unlock_inner_button" onclick="unlockToken(17);">UNLOCK zsb-USDDLPv2 TO EXIT &gt;</button>
-					</div>
-				</div>
-
-				<div class="info_div">
-					<img src="../images/usdd_lp_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-					<span style="font-size: 16px; vertical-align: top;"><strong>zsb-USDDLP POOL (INACTIVE)</strong></span><br>
-					<a href="wrap/"><button class="light_button">GET zsb-USDDLP &gt;</button></a><br>
-					<div class="info_window">
-						<div class="left_item">DAILY ROI:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_16_dpy">---</div>
-						<div class="left_item">APR:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_16_apr">---</div>
-						<div class="left_item">APY*:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_16_apy">---</div>
-						<div class="left_item">POOL SIZE:</div>
-						<div class="right_item" id="panel_16_poolsize">---</div>
-						<div class="left_item">BALANCE:</div>
-						<div class="right_item" id="panel_16_mybalance">---</div>
-						<div class="left_item">VALUE:</div>
-						<div class="right_item" id="panel_16_value">---</div>
-						<div class="left_item">STBB EARNED:</div>
-						<div class="right_item" id="panel_16_rewardbalance">---</div>
-					</div>
-					<div id="panel_16_action_buttons" style="display: none;">
-						<input type="text" id="panel_16_amount" class="input_box" value="0" placeholder="Enter Amount">
-						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(16);">MAX OUT</button>
-						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(16);" id="panel_16_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(16);" id="panel_16_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_16_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_16_unlock_inner_button" onclick="unlockToken(16);">UNLOCK zsb-USDDLP TO EXIT &gt;</button>
-					</div>
-				</div>
-
-				<div class="info_div">
-					<img src="../images/onedodo_usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-					<span style="font-size: 16px; vertical-align: top;"><strong>zsb-oneDODO POOL (INACTIVE)</strong></span><br>
-					<a href="wrap/"><button class="light_button">GET zsb-oneDODO &gt;</button></a><br>
-					<div class="info_window">
-						<div class="left_item">DAILY ROI:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_14_dpy">---</div>
-						<div class="left_item">APR:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_14_apr">---</div>
-						<div class="left_item">APY*:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_14_apy">---</div>
-						<div class="left_item">POOL SIZE:</div>
-						<div class="right_item" id="panel_14_poolsize">---</div>
-						<div class="left_item">BALANCE:</div>
-						<div class="right_item" id="panel_14_mybalance">---</div>
-						<div class="left_item">VALUE:</div>
-						<div class="right_item" id="panel_14_value">---</div>
-						<div class="left_item">STBB EARNED:</div>
-						<div class="right_item" id="panel_14_rewardbalance">---</div>
-					</div>
-					<div id="panel_14_action_buttons" style="display: none;">
-						<input type="text" id="panel_14_amount" class="input_box" value="0" placeholder="Enter Amount">
-						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(14);">MAX OUT</button>
-						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(14);" id="panel_14_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(14);" id="panel_14_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_14_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_14_unlock_inner_button" onclick="unlockToken(14);">UNLOCK zsb-oneDODO TO EXIT &gt;</button>
-					</div>
-				</div>
-
-				<div class="info_div">
-					<img src="../images/static_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-					<span style="font-size: 16px; vertical-align: top;"><strong>zsb-STATIC POOL (INACTIVE)</strong></span><br>
-					<a href="wrap/"><button class="light_button">GET zsb-STATIC &gt;</button></a><br>
-					<div class="info_window">
-						<div class="left_item">DAILY ROI:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_13_dpy">---</div>
-						<div class="left_item">APR:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_13_apr">---</div>
-						<div class="left_item">APY*:</div>
-						<div class="right_item" style="color: rgb(40,200,40);" id="panel_13_apy">---</div>
-						<div class="left_item">POOL SIZE:</div>
-						<div class="right_item" id="panel_13_poolsize">---</div>
-						<div class="left_item">BALANCE:</div>
-						<div class="right_item" id="panel_13_mybalance">---</div>
-						<div class="left_item">VALUE:</div>
-						<div class="right_item" id="panel_13_value">---</div>
-						<div class="left_item">STBB EARNED:</div>
-						<div class="right_item" id="panel_13_rewardbalance">---</div>
-					</div>
-					<div id="panel_13_action_buttons" style="display: none;">
-						<input type="text" id="panel_13_amount" class="input_box" value="0" placeholder="Enter Amount">
-						<br>
-						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(13);">MAX OUT</button>
-						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(13);" id="panel_13_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(13);" id="panel_13_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_13_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_13_unlock_inner_button" onclick="unlockToken(13);">UNLOCK zsb-STATIC TO EXIT &gt;</button>
 					</div>
 				</div>
 
@@ -329,14 +196,11 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_4_rewardbalance">---</div>
 					</div>
-					<div id="panel_4_action_buttons" style="display: none;">
+					<div id="panel_4_action_buttons">
 						<input type="text" id="panel_4_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br>
 						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(4);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(4);" id="panel_4_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(4);" id="panel_4_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_4_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_4_unlock_inner_button" onclick="unlockToken(4);">UNLOCK zsb-ETH TO EXIT &gt;</button>
 					</div>
 				</div>
 
@@ -360,14 +224,11 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_8_rewardbalance">---</div>
 					</div>
-					<div id="panel_8_action_buttons" style="display: none;">
+					<div id="panel_8_action_buttons">
 						<input type="text" id="panel_8_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br>
 						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(8);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(8);" id="panel_8_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(8);" id="panel_8_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_8_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_8_unlock_inner_button" onclick="unlockToken(8);">UNLOCK zsb-USDG TO EXIT &gt;</button>
 					</div>
 				</div>
 
@@ -391,14 +252,11 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_10_rewardbalance">---</div>
 					</div>
-					<div id="panel_10_action_buttons" style="display: none;">
+					<div id="panel_10_action_buttons">
 						<input type="text" id="panel_10_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br>
 						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(10);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(10);" id="panel_10_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(10);" id="panel_10_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_10_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_10_unlock_inner_button" onclick="unlockToken(10);">UNLOCK zsb-UST TO EXIT &gt;</button>
 					</div>
 				</div>
 
@@ -422,13 +280,10 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_11_rewardbalance">---</div>
 					</div>
-					<div id="panel_11_action_buttons" style="display: none;">
+					<div id="panel_11_action_buttons">
 						<input type="text" id="panel_11_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(11);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(11);" id="panel_11_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(11);" id="panel_11_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_11_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_11_unlock_inner_button" onclick="unlockToken(11);">UNLOCK zsb-DOLLY TO EXIT &gt;</button>
 					</div>
 				</div>
 
@@ -452,13 +307,10 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_6_rewardbalance">---</div>
 					</div>
-					<div id="panel_6_action_buttons" style="display: none;">
+					<div id="panel_6_action_buttons">
 						<input type="text" id="panel_6_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(6);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(6);" id="panel_6_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(6);" id="panel_6_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_6_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_6_unlock_inner_button" onclick="unlockToken(6);">UNLOCK zsb-BTC TO EXIT &gt;</button>
 					</div>
 				</div>
 
@@ -482,13 +334,10 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_12_rewardbalance">---</div>
 					</div>
-					<div id="panel_12_action_buttons" style="display: none;">
+					<div id="panel_12_action_buttons">
 						<input type="text" id="panel_12_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(12);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(12);" id="panel_12_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(12);" id="panel_12_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_12_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_12_unlock_inner_button" onclick="unlockToken(12);">UNLOCK zsb-IRON2 TO EXIT &gt;</button>
 					</div>
 				</div>
 
@@ -512,13 +361,10 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_9_rewardbalance">---</div>
 					</div>
-					<div id="panel_9_action_buttons" style="display: none;">
+					<div id="panel_9_action_buttons">
 						<input type="text" id="panel_9_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(9);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(9);" id="panel_9_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(9);" id="panel_9_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_9_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_9_unlock_inner_button" onclick="unlockToken(9);">UNLOCK zsb-MBDO TO EXIT &gt;</button>
 					</div>
 				</div>
 
@@ -542,13 +388,10 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_2_rewardbalance">---</div>
 					</div>
-					<div id="panel_2_action_buttons" style="display: none;">
+					<div id="panel_2_action_buttons">
 						<input type="text" id="panel_2_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(2);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(2);" id="panel_2_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(2);" id="panel_2_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_2_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_2_unlock_inner_button" onclick="unlockToken(2);">UNLOCK zsb-IRON TO EXIT &gt;</button>
 					</div>
 				</div>
 
@@ -570,13 +413,10 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_0_rewardbalance">---</div>
 					</div>
-					<div id="panel_0_action_buttons" style="display: none;">
+					<div id="panel_0_action_buttons">
 						<input type="text" id="panel_0_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(0);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(0);" id="panel_0_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(0);" id="panel_0_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_0_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_0_unlock_inner_button" onclick="unlockToken(0);">UNLOCK LP TO EXIT &gt;</button>
 					</div>
 				</div>
 
@@ -600,13 +440,10 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_5_rewardbalance">---</div>
 					</div>
-					<div id="panel_5_action_buttons" style="display: none;">
+					<div id="panel_5_action_buttons">
 						<input type="text" id="panel_5_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(5);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(5);" id="panel_5_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(5);" id="panel_5_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_5_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_5_unlock_inner_button" onclick="unlockToken(5);">UNLOCK zsb-MDO TO EXIT &gt;</button>
 					</div>
 				</div>
 
@@ -630,14 +467,11 @@
 						<div class="left_item">STBB EARNED:</div>
 						<div class="right_item" id="panel_3_rewardbalance">---</div>
 					</div>
-					<div id="panel_3_action_buttons" style="display: none;">
+					<div id="panel_3_action_buttons">
 						<input type="text" id="panel_3_amount" class="input_box" value="0" placeholder="Enter Amount">
 						<br>
 						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(3);">MAX OUT</button>
 						<br><button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(3);" id="panel_3_withdraw_button">WITHDRAW &gt;</button> <button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(3);" id="panel_3_claim_button">CLAIM STBB &gt;</button>
-					</div>
-					<div id="panel_3_unlock_button" class="unlock_div">
-						<button class="dark_button" id="panel_3_unlock_inner_button" onclick="unlockToken(3);">UNLOCK zsb-BDO TO EXIT &gt;</button>
 					</div>
 				</div>
 
