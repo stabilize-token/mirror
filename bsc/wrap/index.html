@@ -125,49 +125,6 @@
 				</div>
 			</div>
 
-			<div class="info_div" style="min-height: 585px;">
-				<img src="../../images/busd_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>BUSD WRAPPER</strong></span><br>
-				<a href="https://pancakeswap.finance/swap?inputCurrency=BNB&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56" target="_blank"><button class="light_button">GET BUSD &gt;</button></a><br>
-				<span style="font-size: 14px;">WRAP BUSD INTO zsb-BUSD TO EARN INTEREST<br></span>
-				<div class="info_window">
-					<div class="left_item">STRAT APY:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_16_apy">---</div>
-					<div class="left_item">WALLET BALANCE:</div>
-					<div class="right_item" id="panel_16_walletbalance">---</div>
-					<div class="left_item">PRICE/TOKEN:</div>
-					<div class="right_item" id="panel_16_price">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_16_value">---</div>
-					<div class="left_item">WITHDRAW TOKEN:</div>
-					<div class="right_item" id="panel_16_withdrawtoken">---</div>
-					<div class="left_item">STAKE APR:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_16_stbb_apr">---</div>
-					<div class="left_item">STAKE APY*:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_16_stbb_apy">---</div>
-					<div class="left_item">TOTAL STBB:</div>
-					<div class="right_item" id="panel_16_stbb_total">---</div>
-					<div class="left_item">STBB BALANCE:</div>
-					<div class="right_item" id="panel_16_stbb_balance">---</div>
-					<div class="left_item">WBNB EARNED:</div>
-					<div class="right_item" id="panel_16_wbnb_balance">---</div>
-				</div>
-				<div id="panel_16_action_buttons">
-					<input type="text" id="panel_16_amount" oninput="resetAllowanceTimer(16, false);" autocomplete="off" class="input_box" placeholder="Enter Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxWrap(16);">MAX WRAP</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(16);">MAX UNWRAP</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" disabled onclick="wrap(16);">WRAP &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(16);" id="panel_16_withdraw_button">UNWRAP &gt;</button>
-				</div>
-				<div id="panel_16_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
-				<div id="panel_16_stake_buttons" style="margin-top: 5px;">
-					<input type="text" id="panel_16_stake_amount" oninput="resetAllowanceTimer(16, true);" autocomplete="off" class="input_box" placeholder="Enter STBB Amount">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeIn(16);">MAX IN</button><button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(16);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" disabled onclick="stake(16);">STAKE &gt;</button><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(16);" id="panel_16_unstake_button">UNSTAKE &gt;</button> 
-					<button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(16);" id="panel_16_claim_stake_button">CLAIM WBNB &gt;</button>
-				</div>
-			</div>
-
 			<br><br>
 			<span style="font-size: 12px; color: black;">* Yearly yield if manually compounded every week.</span>
 
@@ -176,6 +133,50 @@
 
 			<div id="inactive_wraps_container" style="display: none; margin-bottom: 10px;">
 				<br><br>
+
+				<div class="info_div" style="min-height: 585px;">
+					<img src="../../images/busd_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+					<span style="font-size: 16px; vertical-align: top;"><strong>BUSD WRAPPER (INACTIVE)</strong></span><br>
+					<a href="https://pancakeswap.finance/swap?inputCurrency=BNB&outputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56" target="_blank"><button class="light_button">GET BUSD &gt;</button></a><br>
+					<span style="font-size: 14px;">WRAP BUSD INTO zsb-BUSD TO EARN INTEREST<br></span>
+					<div class="info_window">
+						<div class="left_item">STRAT APY:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_16_apy">---</div>
+						<div class="left_item">WALLET BALANCE:</div>
+						<div class="right_item" id="panel_16_walletbalance">---</div>
+						<div class="left_item">PRICE/TOKEN:</div>
+						<div class="right_item" id="panel_16_price">---</div>
+						<div class="left_item">VALUE:</div>
+						<div class="right_item" id="panel_16_value">---</div>
+						<div class="left_item">WITHDRAW TOKEN:</div>
+						<div class="right_item" id="panel_16_withdrawtoken">---</div>
+						<div class="left_item">STAKE APR:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_16_stbb_apr">---</div>
+						<div class="left_item">STAKE APY*:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_16_stbb_apy">---</div>
+						<div class="left_item">TOTAL STBB:</div>
+						<div class="right_item" id="panel_16_stbb_total">---</div>
+						<div class="left_item">STBB BALANCE:</div>
+						<div class="right_item" id="panel_16_stbb_balance">---</div>
+						<div class="left_item">WBNB EARNED:</div>
+						<div class="right_item" id="panel_16_wbnb_balance">---</div>
+					</div>
+					<div id="panel_16_action_buttons">
+						<input type="text" id="panel_16_amount" oninput="resetAllowanceTimer(16, false);" autocomplete="off" class="input_box" placeholder="Enter Amount">
+						<br>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxUnwrap(16);">MAX UNWRAP</button>
+						<br>
+						<button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unwrap(16);" id="panel_16_withdraw_button">UNWRAP &gt;</button>
+					</div>
+					<div id="panel_16_border" class="stbb_border" style="height: 2px; background-color: rgb(100,100,100); width: 95%; margin-left: auto; margin-right: auto; margin-top: 10px;"> </div>
+					<div id="panel_16_stake_buttons" style="margin-top: 5px;">
+						<input type="text" id="panel_16_stake_amount" oninput="resetAllowanceTimer(16, true);" autocomplete="off" class="input_box" placeholder="Enter STBB Amount">
+						<br>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxStakeOut(16);">MAX OUT</button>
+						<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" onclick="unstake(16);" id="panel_16_unstake_button">UNSTAKE &gt;</button> 
+						<button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(16);" id="panel_16_claim_stake_button">CLAIM WBNB &gt;</button>
+					</div>
+				</div>
 
 				<div class="info_div" style="min-height: 585px;">
 					<img src="../../images/ausd_lp_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
