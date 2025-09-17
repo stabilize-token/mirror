@@ -115,39 +115,6 @@
 				</div>
 			</div>
 
-			<div class="info_div">
-				<img src="../images/gmx_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
-				<span style="font-size: 16px; vertical-align: top;"><strong>zs-fsGLP POOL</strong></span><br>
-				<a href="wrap/"><button class="light_button">GET zs-fsGLP &gt;</button></a><br>
-				<div class="info_window">
-					<div class="left_item">DAILY ROI:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_4_dpy">---</div>
-					<div class="left_item">APR:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_4_apr">---</div>
-					<div class="left_item">APY<span style="font-size: 8px; vertical-align: top;">1</span>:</div>
-					<div class="right_item" style="color: rgb(40,200,40);" id="panel_4_apy">---</div>
-					<div class="left_item">POOL SIZE:</div>
-					<div class="right_item" id="panel_4_poolsize">---</div>
-					<div class="left_item">BALANCE:</div>
-					<div class="right_item" id="panel_4_mybalance">---</div>
-					<div class="left_item">VALUE:</div>
-					<div class="right_item" id="panel_4_value">---</div>
-					<div class="left_item">STBZ EARNED:</div>
-					<div class="right_item" id="panel_4_rewardbalance">---</div>
-					<div class="left_item">REWARD FEE<span style="font-size: 8px; vertical-align: top;">2</span>:</div>
-					<div class="right_item" id="panel_4_rewardfee">---</div>
-				</div>
-				<div id="panel_4_action_buttons">
-					<input type="text" id="panel_4_amount" autocomplete="off" class="input_box" value="0" placeholder="Enter Amount" oninput="resetAllowanceTimer(4);">
-					<br>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxIn(4);">MAX IN</button>
-					<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(4);">MAX OUT</button>
-					<br><button class="dark_button" style="min-width: 0px; width: 40%; margin: 2px;" id="panel_4_deposit_approve_button" disabled onclick="deposit(4);">DEPOSIT &gt;</button>
-					<button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(4);" id="panel_4_withdraw_button">WITHDRAW &gt;</button> 
-					<br><button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(4);" id="panel_4_claim_button">CLAIM STBZ &gt;</button>
-				</div>
-			</div>
-
 			<br><br>
 			<span style="font-size: 12px; color: black;"><span style="font-size: 8px; vertical-align: top;">1</span>Yearly yield if manually compounded every quarter. <span style="font-size: 8px; vertical-align: top;">2</span>Rewards automatically vest for 3 months on deposits at which full reward becomes available.</span>
 			
@@ -156,6 +123,37 @@
 
 			<div id="inactive_pool_container" style="display: none; margin-bottom: 10px;">
 				<br><br>
+
+				<div class="info_div">
+					<img src="../images/gmx_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
+					<span style="font-size: 16px; vertical-align: top;"><strong>zs-fsGLP POOL (INACTIVE)</strong></span><br>
+					<a href="wrap/"><button class="light_button">GET zs-fsGLP &gt;</button></a><br>
+					<div class="info_window">
+						<div class="left_item">DAILY ROI:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_4_dpy">---</div>
+						<div class="left_item">APR:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_4_apr">---</div>
+						<div class="left_item">APY<span style="font-size: 8px; vertical-align: top;">1</span>:</div>
+						<div class="right_item" style="color: rgb(40,200,40);" id="panel_4_apy">---</div>
+						<div class="left_item">POOL SIZE:</div>
+						<div class="right_item" id="panel_4_poolsize">---</div>
+						<div class="left_item">BALANCE:</div>
+						<div class="right_item" id="panel_4_mybalance">---</div>
+						<div class="left_item">VALUE:</div>
+						<div class="right_item" id="panel_4_value">---</div>
+						<div class="left_item">STBZ EARNED:</div>
+						<div class="right_item" id="panel_4_rewardbalance">---</div>
+						<div class="left_item">REWARD FEE<span style="font-size: 8px; vertical-align: top;">2</span>:</div>
+						<div class="right_item" id="panel_4_rewardfee">---</div>
+					</div>
+					<div id="panel_4_action_buttons">
+						<input type="text" id="panel_4_amount" autocomplete="off" class="input_box" value="0" placeholder="Enter Amount" oninput="resetAllowanceTimer(4);">
+						<br>
+						<button class="light_button" style="min-width: 0px; width: 40%; margin: 2px; margin-top: 10px;" onclick="selectMaxOut(4);">MAX OUT</button>
+						<button class="dark_button" style="min-width: 0px; width: 40%; display: none; margin: 2px;" onclick="withdraw(4);" id="panel_4_withdraw_button">WITHDRAW &gt;</button> 
+						<br><button class="dark_button" style="display: none; margin-top: 5px;" onclick="claimReward(4);" id="panel_4_claim_button">CLAIM STBZ &gt;</button>
+					</div>
+				</div>
 
 				<div class="info_div">
 					<img src="../images/usdc_icon_small.png" class="img-fluid" style="width: auto; max-height: 25px; vertical-align: top;">
